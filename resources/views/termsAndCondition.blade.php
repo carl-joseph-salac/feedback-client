@@ -28,8 +28,8 @@
             <div class="col-lg-3 col-md-1 col-0"></div>
             <div class="col-lg-9 col-md-11 col-12 list text-left">
                 <div class="custom-control custom-checkbox mb-4">
-                    <input id="customCheck1" type="checkbox" class="custom-control-input" {{-- checked="1" --}}>
-                    <label for="customCheck1" class="custom-control-label">I have read and agree to the following Terms and Conditions</label>
+                    <input id="customCheck" type="checkbox" class="custom-control-input"{{-- checked="1" --}}>
+                    <label for="customCheck" class="custom-control-label">I have read and agree to the following Terms and Conditions</label>
                 </div>
                 <ol type="1" class="pl-3 text-muted mb-5">
                     <li>Lorem ipsum dolor sit amet</li>
@@ -39,10 +39,48 @@
                 </ol>
             </div>
         </div>
-        <a href="{{ route('feedback') }}" name="next" id="next1" class="btn btn-success rounded-1 mb-5 next" @unlesschecked('customCheck1') disabled @endunless>
+        <a href="{{ route('feedback') }}" id="start" class="btn btn-success rounded-1 mb-5 disabled" style="pointer-events: none; cursor: default;">
             START
         </a>
     </div>
 </div>
+{{-- Enable button whenever checkbox is checked, disable when unchecked--}}
+<script>
+    const startBtn = document.getElementById("start");
+    const checkbox = document.getElementById("customCheck");
+
+    checkbox.addEventListener("change", function() {
+        if (this.checked) {
+            startBtn.classList.remove("disabled");
+            startBtn.style.pointerEvents = "auto";
+            startBtn.style.cursor = "pointer";
+        } else {
+            startBtn.classList.add("disabled");
+            startBtn.style.pointerEvents = "none";
+            startBtn.style.cursor = "default";
+        }
+    });
+</script>
 @endsection
+
+{{-- //Using button
+    <form action="{{ route('feedback') }}" method="get">
+            @csrf
+            <button disabled id="start" class="btn btn-success rounded-1 mb-5">
+                START
+            </button>
+    </form>
+
+<script>
+    const startBtn = document.getElementById("start");
+    const checkbox = document.getElementById("customCheck");
+
+    checkbox.addEventListener("change", function() {
+        if (this.checked) {
+            startBtn.removeAttribute("disabled");
+        } else {
+            startBtn.setAttribute("disabled", "disabled");
+        }
+    });
+</script> --}}
 

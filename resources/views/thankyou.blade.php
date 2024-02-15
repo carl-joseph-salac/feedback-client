@@ -28,7 +28,7 @@
         <h3 class="heading">Thank You for your Feedback!</h3>
         <div class="row justify-content-center">
             <div class="">
-                <img src="https://i.imgur.com/4Y9xMCF.gif" class="fit-image mb-5">
+                <img src="{{ asset('images/check-feedback.gif') }}{{--https://i.imgur.com/4Y9xMCF.gif--}}" class="fit-image mb-5">
             </div>
         </div>
     </div>

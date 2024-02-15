@@ -39,8 +39,8 @@
                 </div>
             </div>
         </div>
-        <a href="{{ route('termsAndCondition') }}" class="btn btn-success rounded-0 mb-5 prev">Back</a>
-        <a href="{{ route('confirmation') }}" id="next2" class="btn btn-success rounded-0 mb-5 next" onclick="validate(0)">Submit</a>
+        <a href="{{ route('termsAndCondition') }}" class="btn btn-success rounded-1 mb-5 prev" disabled>Back</a>
+        <a href="{{ route('confirmation') }}" id="next2" class="btn btn-success rounded-1 mb-5 next" onclick="validate(0)">Submit</a>
     </div>
 </div>
 @endsection
