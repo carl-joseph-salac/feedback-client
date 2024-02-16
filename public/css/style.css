@@ -6,6 +6,7 @@ body {
     background-repeat: no-repeat;
 }
 
+
 .card.show {
     display: block !important;
 }

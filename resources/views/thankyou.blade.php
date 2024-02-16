@@ -1,5 +1,5 @@
 @extends('layout.app')
-@section('thankyou')
+@section('section')
 <div class="card b-0 rounded-0">
     <div class="row justify-content-center mx-auto step-container">
         <div class="col-md-3 col-4 step-box">

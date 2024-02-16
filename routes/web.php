@@ -16,7 +16,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::controller(feedbackClientController::class)->group(function () {
     Route::get('/', 'termsAndCondition')->name('termsAndCondition');
-    Route::get('/feedback', 'feedback')->name('feedback');
+    Route::get('/cc1', 'cc1')->name('cc1');
+    Route::get('/cc2', 'cc2')->name('cc2');
+    Route::get('/cc3', 'cc3')->name('cc3');
+    Route::get('/sqd0', 'sqd0')->name('sqd0');
     Route::get('/confirmation', 'confirmation')->name('confirmation');
     Route::get('/thankyou', 'thankyou')->name('thankyou');
     Route::get('/welcome', 'welcome');

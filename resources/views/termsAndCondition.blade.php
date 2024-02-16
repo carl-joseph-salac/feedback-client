@@ -1,5 +1,26 @@
 @extends('layout.app')
-@section('termsAndCondition')
+
+@section('additionalScript')
+{{-- Enable button whenever checkbox is checked, disable when unchecked--}}
+<script>
+    const startBtn = document.getElementById("start");
+    const checkbox = document.getElementById("customCheck");
+
+    checkbox.addEventListener("change", function() {
+        if (this.checked) {
+            startBtn.classList.remove("disabled");
+            startBtn.style.pointerEvents = "auto";
+            startBtn.style.cursor = "pointer";
+        } else {
+            startBtn.classList.add("disabled");
+            startBtn.style.pointerEvents = "none";
+            startBtn.style.cursor = "default";
+        }
+    });
+</script>
+@endsection
+
+@section('section')
 <div class="card b-0 rounded-0 show">
     <div class="row justify-content-center mx-auto step-container">
         <div class="col-md-3 col-4 step-box active">
@@ -28,7 +49,7 @@
             <div class="col-lg-3 col-md-1 col-0"></div>
             <div class="col-lg-9 col-md-11 col-12 list text-left">
                 <div class="custom-control custom-checkbox mb-4">
-                    <input id="customCheck" type="checkbox" class="custom-control-input"{{-- checked="1" --}}>
+                    <input id="customCheck" type="checkbox" class="custom-control-input" style="pointer-events: none; cursor: default;"{{-- checked="1" --}}>
                     <label for="customCheck" class="custom-control-label">I have read and agree to the following Terms and Conditions</label>
                 </div>
                 <ol type="1" class="pl-3 text-muted mb-5">
@@ -39,28 +60,12 @@
                 </ol>
             </div>
         </div>
-        <a href="{{ route('feedback') }}" id="start" class="btn btn-success rounded-1 mb-5 disabled" style="pointer-events: none; cursor: default;">
+        <a href="{{route('cc1') }}" id="start" class="btn btn-success rounded-1 mb-5 disabled" style="pointer-events: none; cursor: default;">
             START
         </a>
     </div>
 </div>
-{{-- Enable button whenever checkbox is checked, disable when unchecked--}}
-<script>
-    const startBtn = document.getElementById("start");
-    const checkbox = document.getElementById("customCheck");
 
-    checkbox.addEventListener("change", function() {
-        if (this.checked) {
-            startBtn.classList.remove("disabled");
-            startBtn.style.pointerEvents = "auto";
-            startBtn.style.cursor = "pointer";
-        } else {
-            startBtn.classList.add("disabled");
-            startBtn.style.pointerEvents = "none";
-            startBtn.style.cursor = "default";
-        }
-    });
-</script>
 @endsection
 
 {{-- //Using button

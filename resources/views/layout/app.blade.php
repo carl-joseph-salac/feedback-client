@@ -8,22 +8,22 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
+    @yield('addtionalStyle')
 </head>
 
 <body>
-    <div class="container-fluid px-1 py-5 mx-auto">
-        <div class="row d-flex justify-content-center text-center">
+    <div class="container-fluid px-1 py-5">
+        <div class="row justify-content-center">
             <div class="col-lg-9 col-md-10">
-                @yield('termsAndCondition')
-                @yield('feedback')
-                @yield('confirmation')
-                @yield('thankyou')
+                @yield('section')
             </div>
         </div>
     </div>
 
+
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    @yield('additionalScript')
 </body>
 </html>
 {{-- <script src="{{ url('js/script.js') }}"></script> --}}

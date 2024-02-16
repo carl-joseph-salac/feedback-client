@@ -1,5 +1,5 @@
 @extends('layout.app')
-@section('confirmation')
+@section('section')
 <div class="card b-0 rounded-0">
     <div class="row justify-content-center mx-auto step-container">
         <div class="col-md-3 col-4 step-box">
@@ -31,8 +31,8 @@
                 <h6 class="confirm">Verify all entered details and press confirm</h6>
             </div>
         </div>
-        <a href="{{ route('feedback') }}" class="btn btn-success rounded-0 mb-5 prev">Back</a>
-        <a href="{{ route('thankyou') }}" id="next3" class="btn btn-success rounded-0 mb-5 next">Confirm</a>
+        <a href="{{ route('cc3') }}" class="btn btn-success rounded-1 mb-5 prev">Back</a>
+        <a href="{{ route('thankyou') }}" id="next3" class="btn btn-success rounded-1 mb-5 next">Confirm</a>
     </div>
 </div>
 @endsection
