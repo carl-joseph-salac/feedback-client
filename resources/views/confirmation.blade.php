@@ -35,16 +35,16 @@
                         {{-- <strong class="mr-3">{{strtoupper($formData['question_no'])}}</strong>{{$formData['question']}} --}}
                     </p>
                     @if (isset($formData['cc1']))
-                        <p>1. {{ $formData['cc1'] }}</p>
+                        <p>{{ $formData['cc1'] }}</p>
                     @endif
                     @if (isset($formData['cc2']))
-                        <p>2. {{ $formData['cc2'] }}</p>
+                        <p>{{ $formData['cc2'] }}</p>
                     @endif
                     @if (isset($formData['cc3']))
-                        <p>3. {{ $formData['cc3'] }}</p>
+                        <p>{{ $formData['cc3'] }}</p>
                     @endif
                     @if (isset($formData['cc4']))
-                        <p>4. {{ $formData['cc4'] }}</p>
+                        <p>{{ $formData['cc4'] }}</p>
                     @endif
                 </div>
             </div>

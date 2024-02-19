@@ -47,7 +47,15 @@ class feedbackClientController extends Controller
             'cc3' => 'nullable',
             'cc4' => 'nullable'
             // Add validation rules for other fields
+        ], [
+            // Custom error message if none of the checkboxes are selected
+            'required' => 'At least one option must be selected.',
         ]);
+
+        // Ensure at least one checkbox is checked
+        if (!$request->filled('cc1') && !$request->filled('cc2') && !$request->filled('cc3') && !$request->filled('cc4')) {
+            return redirect()->back()->withErrors(['cc1' => 'At least one option must be selected.'])->withInput();
+        }
 
         // Store the validated data in the session
         $request->session()->put('form_data', $validatedData);

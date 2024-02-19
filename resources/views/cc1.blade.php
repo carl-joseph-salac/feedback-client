@@ -1,13 +1,5 @@
 @extends('layout.app')
 
-{{-- @section('addtionalStyle')
-
-@endsection
-
-@section('additionalScript')
-
-@endsection --}}
-
 @section('section')
     <div class="card rounded-0">
         <div class="row justify-content-center mx-auto step-container">
@@ -34,6 +26,44 @@
             </div>
         </div>
 
+        <div class="container">
+            <!-- Display validation error for cc1 -->
+            @error('cc1')
+                <div class="alert alert-danger alert-dismissable d-flex justify-content-between align-items-center"
+                    role="alert">
+                    {{ $message }}
+                    <button type="button" class="btn-close" aria-label="Close" data-bs-dismiss="alert"></button>
+                </div>
+            @enderror
+
+            <!-- Display validation error for cc2 -->
+            @error('cc2')
+                <div class="alert alert-danger alert-dismissable d-flex justify-content-between align-items-center"
+                    role="alert">
+                    {{ $message }}
+                    <button type="button" class="btn-close" aria-label="Close" data-bs-dismiss="alert"></button>
+                </div>
+            @enderror
+
+            <!-- Display validation error for cc3 -->
+            @error('cc3')
+                <div class="alert alert-danger alert-dismissable d-flex justify-content-between align-items-center"
+                    role="alert">
+                    {{ $message }}
+                    <button type="button" class="btn-close" aria-label="Close" data-bs-dismiss="alert"></button>
+                </div>
+            @enderror
+
+            <!-- Display validation error for cc4 -->
+            @error('cc4')
+                <div class="alert alert-danger alert-dismissable d-flex justify-content-between align-items-center"
+                    role="alert">
+                    {{ $message }}
+                    <button type="button" class="btn-close" aria-label="Close" data-bs-dismiss="alert"></button>
+                </div>
+            @enderror
+        </div>
+
         <div class="container mb-3 mt-0">
             <div class="container border">
                 <h4 class="heading mb-2 text-center">Feedback</h4>
@@ -46,6 +76,8 @@
                     <form action="{{ route('store') }}" method="post" class="mt-2">
                         @csrf
                         @method('post')
+
+
                         <table>
                             <tr>
                                 <td style="width: 50px;"><strong>{{ strtoupper($cc->question_no) }}</strong></td>
@@ -57,14 +89,14 @@
                             <tr>
                                 <td></td>
                                 <td><input class="checkboxes" type="checkbox" name="cc1" id="cc1"
-                                        value="{{ $cc->choices1 }}">
+                                        value="1. {{ $cc->choices1 }}">
                                 </td>
                                 <td name="cc1" colspan="2">1. {{ $cc->choices1 }}</td>
                             </tr>
                             <tr>
                                 <td></td>
                                 <td><input class="checkboxes" type="checkbox" name="cc2" id="cc2"
-                                        value="{{ $cc->choices2 }}">
+                                        value="2. {{ $cc->choices2 }}">
                                 </td>
                                 <td name="cc2" colspan="2">2. {{ $cc->choices2 }} </td>
                             </tr>
