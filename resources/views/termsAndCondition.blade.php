@@ -1,8 +1,16 @@
 @extends('layout.app')
 
+{{-- @section('addtionalStyle')
+    <style>
+        .custom:hover {
+        cursor: pointer;
+    }
+    </style>
+@endsection --}}
+
 @section('additionalScript')
-{{-- Enable button whenever checkbox is checked, disable when unchecked--}}
 <script>
+    //Enable button whenever checkbox is checked, disable when unchecked
     const startBtn = document.getElementById("start");
     const checkbox = document.getElementById("customCheck");
 
@@ -49,8 +57,14 @@
             <div class="col-lg-3 col-md-1 col-0"></div>
             <div class="col-lg-9 col-md-11 col-12 list text-left">
                 <div class="custom-control custom-checkbox mb-4">
-                    <input id="customCheck" type="checkbox" class="custom-control-input" style="pointer-events: none; cursor: default;"{{-- checked="1" --}}>
-                    <label for="customCheck" class="custom-control-label">I have read and agree to the following Terms and Conditions</label>
+                    <input id="customCheck" type="checkbox" class="custom-control-input hover-cursor-pointer">
+                    <label for="customCheck" class="custom-control-label">
+                        I have read and agree to the following Terms and Conditions
+                    </label>
+                    {{-- <input type="checkbox" name="check" id="check">
+                    <label for="check">
+                        I have read and a   gree to the following Terms and Conditions
+                    </label> --}}
                 </div>
                 <ol type="1" class="pl-3 text-muted mb-5">
                     <li>Lorem ipsum dolor sit amet</li>

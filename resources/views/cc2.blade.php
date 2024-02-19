@@ -1,22 +1,5 @@
 @extends('layout.app')
 
-@section('addtionalStyle')
-    <style>
-        table tr td{
-            padding: 4px;
-        }
-    </style>
-@endsection
-
-@section('additionalScript')
-    <script>
-        $(".checkboxes").change(function(){
-            $(".checkboxes").prop('checked',false);
-            $(this).prop('checked',true);
-        });
-    </script>
-@endsection
-
 @section('section')
 <div class="card rounded-0">
     <div class="row justify-content-center mx-auto step-container">
@@ -86,7 +69,7 @@
             </div>
             <div class="container text-center d-flex justify-content-center my-3">
                 <a href="{{ route('cc1') }}" class="text-center btn btn-success rounded-1 prev mr-2">Back</a>
-                <a href="{{route('cc3') }}" id="next" class="btn btn-success rounded-1 ml-2">
+                <a href="{{route('cc3') }}" id="next" class="btn btn-success rounded-1 ml-2 disabled">
                     Next
                 </a>
             </div>

@@ -1,22 +1,5 @@
 @extends('layout.app')
 
-@section('addtionalStyle')
-    <style>
-        table tr td{
-            padding: 4px;
-        }
-    </style>
-@endsection
-
-@section('additionalScript')
-    <script>
-        $(".checkboxes").change(function(){
-            $(".checkboxes").prop('checked',false);
-            $(this).prop('checked',true);
-        });
-    </script>
-@endsection
-
 @section('section')
 <div class="card rounded-0">
     <div class="row justify-content-center mx-auto step-container">

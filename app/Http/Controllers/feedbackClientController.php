@@ -38,6 +38,39 @@ class feedbackClientController extends Controller
         return view('thankyou');
     }
 
+    public function store(Request $request){
+        $cc1 = DB::table('tbl_cc_question');
+        // Validate the input
+        $validatedData = $request->validate([
+            'cc1' => 'nullable',
+            'cc2' => 'nullable',
+            'cc3' => 'nullable',
+            'cc4' => 'nullable'
+            // Add validation rules for other fields
+        ]);
+
+        // Store the validated data in the session
+        $request->session()->put('form_data', $validatedData);
+
+        // Redirect to the confirmation page
+        return redirect()->route('confirmation', compact('cc1'));
+    }
+
+    public function show()
+    {
+        // Check if the session variable exists
+        if (session()->has('form_data')) {
+            // Retrieve the stored form data from the session
+            $formData = session('form_data');
+
+            // Pass the form data to the confirmation view
+            return view('confirmation', compact('formData'));
+        } else {
+            // Handle the case when form data is not found in the session
+            abort(404); // or redirect to an error page
+        }
+    }
+
     public function welcome(){
         return view('welcome');
     }
@@ -49,4 +82,5 @@ class feedbackClientController extends Controller
     private function sqdquestion($question_no){
         return  DB::table('tbl_sqd_question')->where('question_no', $question_no)->first();
     }
+
 }

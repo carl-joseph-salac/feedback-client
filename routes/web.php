@@ -20,7 +20,8 @@ Route::controller(feedbackClientController::class)->group(function () {
     Route::get('/cc2', 'cc2')->name('cc2');
     Route::get('/cc3', 'cc3')->name('cc3');
     Route::get('/sqd0', 'sqd0')->name('sqd0');
-    Route::get('/confirmation', 'confirmation')->name('confirmation');
+    Route::post('/store', 'store')->name('store');
+    Route::get('/confirmation', 'show')->name('confirmation');
     Route::get('/thankyou', 'thankyou')->name('thankyou');
     Route::get('/welcome', 'welcome');
 });
