@@ -26,7 +26,7 @@
             </div>
         </div>
 
-        <div class="container">
+        {{-- <div class="container">
             <!-- Display validation error for cc1 -->
             @error('cc1')
                 <div class="alert alert-danger alert-dismissable d-flex justify-content-between align-items-center"
@@ -62,7 +62,7 @@
                     <button type="button" class="btn-close" aria-label="Close" data-bs-dismiss="alert"></button>
                 </div>
             @enderror
-        </div>
+        </div> --}}
 
         <div class="container mb-3 mt-0">
             <div class="container border">
@@ -73,11 +73,9 @@
                         Citizen's Charter is an official document that reflects the sercvies of a government agency/office
                         including its requirements, fees, and processing times among others.
                     </p>
-                    <form action="{{ route('store') }}" method="post" class="mt-2">
+                    <form action="{{ route('cc2') }}" method="post" class="mt-2">
                         @csrf
                         @method('post')
-
-
                         <table>
                             <tr>
                                 <td style="width: 50px;"><strong>{{ strtoupper($cc->question_no) }}</strong></td>
@@ -88,44 +86,46 @@
                             <input type="hidden" name="question" value="{{ $cc->question }}">
                             <tr>
                                 <td></td>
-                                <td><input class="checkboxes" type="checkbox" name="cc1" id="cc1"
-                                        value="1. {{ $cc->choices1 }}">
+                                <td><input class="checkboxes" type="checkbox" name="cc1Choices1" id="cc1Choices1"
+                                        value="1. {{ $cc->choices1 }}" {{ session('cc1Choices1') ? 'checked' : '' }}>
                                 </td>
                                 <td name="cc1" colspan="2">1. {{ $cc->choices1 }}</td>
                             </tr>
                             <tr>
                                 <td></td>
-                                <td><input class="checkboxes" type="checkbox" name="cc2" id="cc2"
-                                        value="2. {{ $cc->choices2 }}">
+                                <td><input class="checkboxes" type="checkbox" name="cc1Choices2" id="cc1Choices2"
+                                        value="2. {{ $cc->choices2 }}" {{ session('cc1Choices2') ? 'checked' : '' }}>
                                 </td>
                                 <td name="cc2" colspan="2">2. {{ $cc->choices2 }} </td>
                             </tr>
                             <tr>
                                 <td></td>
-                                <td><input class="checkboxes" type="checkbox" name="cc3" id="cc3"
-                                        value="3. {{ $cc->choices3 }}">
+                                <td><input class="checkboxes" type="checkbox" name="cc1Choices3" id="cc1Choices3"
+                                        value="3. {{ $cc->choices3 }}" {{ session('cc1Choices3') ? 'checked' : '' }}>
                                 </td>
                                 <td name="cc3" colspan="2">3. {{ $cc->choices3 }} </td>
                             </tr>
                             <tr>
                                 <td></td>
-                                <td><input class="checkboxes" type="checkbox" name="cc4" id="cc4"
-                                        value="4. {{ $cc->choices4 }}">
+                                <td><input class="checkboxes" type="checkbox" name="cc1Choices4" id="cc1Choices4"
+                                        value="4. {{ $cc->choices4 }}" {{ session('cc1Choices4') ? 'checked' : '' }}>
                                 </td>
                                 <td name="cc4" colspan="2">4. {{ $cc->choices4 }} </td>
                             </tr>
                         </table>
                         <div class="container text-center d-flex justify-content-center my-3">
-                            <input class="btn btn-primary" type="submit" value="Next" id="next">
-                            {{-- <a href="{{ route('termsAndCondition') }}"
-                                class="text-center btn btn-success rounded-1 prev mr-2">Back</a>
-                            <a href="{{ route('cc2') }}" id="next" class="btn btn-success rounded-1 ml-2 disabled">
-                                Next
-                            </a> --}}
+                                {{-- <form action="{{ route('termsAndCondition') }}" method="post">
+                                    @csrf
+                                    @method('post')
+                                    <button id="back" class="text-center btn btn-success rounded-1 prev mr-2">
+                                        Back
+                                    </button>
+                                </form> --}}
+                            <a href="{{ route('termsAndCondition') }}" class="text-center btn btn-success rounded-1 prev mr-2">Back</a>
+                            <input class="text-center btn btn-success rounded-1 prev mr-2" type="submit" value="Next" id="next">
                         </div>
                     </form>
                 </div>
-
             </div>
         </div>
     </div>

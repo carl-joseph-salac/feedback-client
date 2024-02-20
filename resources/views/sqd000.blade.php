@@ -185,7 +185,7 @@
 
                 </div>
                 <div class="container text-center d-flex justify-content-center my-3">
-                    <a href="{{ route('cc2') }}" class="text-center btn btn-success rounded-1 prev mr-2">Back</a>
+                    <a href="{{ route('cc3Checked') }}" class="text-center btn btn-success rounded-1 prev mr-2">Back</a>
                     <a href="{{ route('sqd0') }}" id="next" class="btn btn-success rounded-1 ml-2">
                         Next
                     </a>

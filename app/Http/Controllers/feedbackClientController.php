@@ -7,25 +7,86 @@ use DB;
 class feedbackClientController extends Controller
 {
     public function termsAndCondition(){
-        return view('termsAndCondition');
+        // Retrieve session data
+         $customCheck = session('customCheck');
+        //session()->flush();
+
+        // Pass session data to the view
+        return view('termsAndCondition', compact('customCheck'));
     }
 
-    public function cc1(){
+    public function cc1(Request $request){
+        // // Retrieve previously stored form data from session
+        // $formData = $request->session()->get('form_data');
+
+        // // Redirect back to the previous step with the previously submitted form data
+        // return redirect()->back()->withInput($formData);
+        $request->session()->put('customCheck', $request->has('customCheck'));
         $cc = $this->ccquestion('cc1');
         return view('cc1', compact('cc'));
     }
 
-    public function cc2(){
+    public function cc1Checked(Request $request){
+        $cc1Choices1 = session('cc1Choices1');
+        $cc1Choices2 = session('cc1Choices2');
+        $cc1Choices3 = session('cc1Choices3');
+        $cc1Choices4 = session('cc1Choices4');
+
+        $cc = $this->ccquestion('cc1');
+        return view('cc1', compact('cc'));
+    }
+
+
+    public function cc2(Request $request){
+        // // Store the form data in the session
+        // $request->session()->put('form_data', $request->all());
+        $request->session()->put('cc1Choices1', $request->has('cc1Choices1'));
+        $request->session()->put('cc1Choices2', $request->has('cc1Choices2'));
+        $request->session()->put('cc1Choices3', $request->has('cc1Choices3'));
+        $request->session()->put('cc1Choices4', $request->has('cc1Choices4'));
+
         $cc = $this->ccquestion('cc2');
         return view('cc2', compact('cc'));
     }
 
-    public function cc3(){
+    public function cc2Checked(Request $request){
+        $choices1 = session('cc2Choices1');
+        $choices2 = session('cc2Choices2');
+        $choices3 = session('cc2Choices3');
+        $choices4 = session('cc2Choices4');
+        $choices5 = session('cc2Choices5');
+
+        $cc = $this->ccquestion('cc2');
+        return view('cc2', compact('cc'));
+    }
+
+    public function cc3(Request $request){
+        $request->session()->put('cc2Choices1', $request->has('cc2Choices1'));
+        $request->session()->put('cc2Choices2', $request->has('cc2Choices2'));
+        $request->session()->put('cc2Choices3', $request->has('cc2Choices3'));
+        $request->session()->put('cc2Choices4', $request->has('cc2Choices4'));
+        $request->session()->put('cc2Choices5', $request->has('cc2Choices5'));
+
         $cc = $this->ccquestion('cc3');
         return view('cc3', compact('cc'));
     }
 
-    public function sqd0(){
+    public function cc3Checked(Request $request){
+        $choices1 = session('cc3Choices1');
+        $choices2 = session('cc3Choices2');
+        $choices3 = session('cc3Choices3');
+        $choices4 = session('cc3Choices4');
+
+        $cc = $this->ccquestion('cc3');
+        return view('cc3', compact('cc'));
+    }
+
+    public function sqd0(Request $request){
+        $request->session()->put('cc3Choices1', $request->has('cc3Choices1'));
+        $request->session()->put('cc3Choices2', $request->has('cc3Choices2'));
+        $request->session()->put('cc3Choices3', $request->has('cc3Choices3'));
+        $request->session()->put('cc3Choices4', $request->has('cc3Choices4'));
+
         $sqd = $this->sqdquestion('sqd0');
         return view('sqd0', compact('sqd'));
     }
@@ -46,16 +107,7 @@ class feedbackClientController extends Controller
             'cc2' => 'nullable',
             'cc3' => 'nullable',
             'cc4' => 'nullable'
-            // Add validation rules for other fields
-        ], [
-            // Custom error message if none of the checkboxes are selected
-            'required' => 'At least one option must be selected.',
         ]);
-
-        // Ensure at least one checkbox is checked
-        if (!$request->filled('cc1') && !$request->filled('cc2') && !$request->filled('cc3') && !$request->filled('cc4')) {
-            return redirect()->back()->withErrors(['cc1' => 'At least one option must be selected.'])->withInput();
-        }
 
         // Store the validated data in the session
         $request->session()->put('form_data', $validatedData);
@@ -79,10 +131,6 @@ class feedbackClientController extends Controller
         }
     }
 
-    public function welcome(){
-        return view('welcome');
-    }
-
     private function ccquestion($question_no){
         return  DB::table('tbl_cc_question')->where('question_no', $question_no)->first();
     }
@@ -92,3 +140,19 @@ class feedbackClientController extends Controller
     }
 
 }
+
+// // Validate the input
+// $validatedData = $request->validate([
+//     'cc1' => 'nullable',
+//     'cc2' => 'nullable',
+//     'cc3' => 'nullable',
+//     'cc4' => 'nullable'
+// ], [
+//     // Custom error message if none of the checkboxes are selected
+//     'required' => 'At least one option must be selected.',
+// ]);
+
+// // Ensure at least one checkbox is checked
+// if (!$request->filled('cc1') && !$request->filled('cc2') && !$request->filled('cc3') && !$request->filled('cc4')) {
+//     return redirect()->back()->withErrors(['cc1' => 'At least one option must be selected.'])->withInput();
+// }

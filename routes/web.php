@@ -16,11 +16,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::controller(feedbackClientController::class)->group(function () {
     Route::get('/', 'termsAndCondition')->name('termsAndCondition');
-    Route::get('/cc1', 'cc1')->name('cc1');
-    Route::get('/cc2', 'cc2')->name('cc2');
-    Route::get('/cc3', 'cc3')->name('cc3');
-    Route::get('/sqd0', 'sqd0')->name('sqd0');
-    Route::post('/store', 'store')->name('store');
+    Route::post('/cc1', 'cc1')->name('cc1');
+    Route::get('/cc1checked', 'cc1Checked')->name('cc1Checked');
+    Route::post('/cc2', 'cc2')->name('cc2');
+    Route::get('/cc2checked', 'cc2Checked')->name('cc2Checked');
+    Route::post('/cc3', 'cc3')->name('cc3');
+    Route::get('/cc3checked', 'cc3Checked')->name('cc3Checked');
+    Route::post('/sqd0', 'sqd0')->name('sqd0');
+    Route::get('/store', 'store')->name('store');
     Route::get('/confirmation', 'show')->name('confirmation');
     Route::get('/thankyou', 'thankyou')->name('thankyou');
     Route::get('/welcome', 'welcome');
