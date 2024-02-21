@@ -15,10 +15,6 @@
         width: 50px;
     } */
 
-    #customCheck:hover {
-        cursor: pointer;
-    }
-
     #nextsqd {
         width: 63px;
     }

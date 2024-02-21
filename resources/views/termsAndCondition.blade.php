@@ -1,5 +1,13 @@
 @extends('layout.app')
 
+@section('addtionalStyle')
+    <style>
+        #customLabel:hover {
+            cursor: pointer;
+        }
+    </style>
+@endsection
+
 @section('additionalScript')
     <script>
         const startBtn = document.getElementById("start");
@@ -12,6 +20,27 @@
                 startBtn.setAttribute("disabled", "disabled");
             }
         });
+
+        //function to handle enabling/disabling the button based on checkbox state
+        function handleButtonState() {
+            const startBtn = document.getElementById("start");
+            const checkbox = document.getElementById("customCheck");
+
+            // Check if the checkbox was previously checked (based on session data)
+            const checkboxChecked = "{{ session('customCheck') }}" == '1'; // Convert session data to boolean
+
+            // Enable or disable the button based on checkbox state
+            if (checkboxChecked) {
+                startBtn.removeAttribute("disabled");
+            } else {
+                startBtn.setAttribute("disabled", "disabled");
+            }
+        }
+
+        // Call the function when the page loads
+        window.onload = function() {
+            handleButtonState();
+        };
     </script>
 @endsection
 
@@ -45,12 +74,21 @@
             @method('post')
             <div class="p-3 justify-content-center text-center">
                 <h4 class="heading">Terms and Conditions</h4>
-                    <div class="custom-control custom-checkbox mb-4">
-                        <input id="customCheck" type="checkbox" class="custom-control-input hover-cursor-pointer" {{ session('customCheck') ? 'checked' : '' }}>
-                        <label for="customCheck" class="custom-control-label">
-                            I have read and agree to the following Terms and Conditions
-                        </label>
-                    </div>
+                {{-- <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                      Default checkbox
+                    </label>
+                </div> --}}
+                <div class="custom-control custom-checkbox mb-4">
+                    {{-- <input class="checkboxes" type="checkbox" name="cc1Choices2" id="cc1Choices2"
+                        value="2. {{ $cc->choices2 }}" {{ session('cc1Choices2') ? 'checked' : '' }}> --}}
+                    <input id="customCheck" name="customCheck" type="checkbox"
+                        class="custom-control-input hover-cursor-pointer" {{ $customCheck ? 'checked' : '' }}>
+                    <label id="customLabel" for="customCheck" class="custom-control-label">
+                        I have read and agree to the following Terms and Conditions
+                    </label>
+                </div>
                 <div class="row justify-content-center">
                     <div class="col-lg-3 col-md-1 col-0"></div>
                     <div class="col-lg-9 col-md-11 col-12 list text-left">
@@ -62,6 +100,7 @@
                         </ol>
                     </div>
                 </div>
+                {{-- <input class="text-center btn btn-success rounded-1 prev mr-2" type="submit" value="start" disabled id="start"> --}}
                 <button type="submit" disabled id="start" class="btn btn-success rounded-1 mb-5">
                     START
                 </button>
@@ -96,6 +135,4 @@
                 startBtn.style.cursor = "default";
             }
         });
-
-
 </script> --}}

@@ -2,29 +2,7 @@
 
 @section('section')
     <div class="card rounded-0">
-        <div class="row justify-content-center mx-auto step-container">
-            <div class="col-md-3 col-4 step-box">
-                <h6 class="step-title-0">
-                    <span class="fa fa-check"></span>
-                    <span class="break-line"></span>
-                    <span class="step-title">TERMS AND CONDITIONS</span>
-                </h6>
-            </div>
-            <div class="col-md-3 col-4 step-box active">
-                <h6 class="step-title-0">
-                    <span class="fa fa-circle"></span>
-                    <span class="break-line"></span>
-                    <span class="step-title">FEEDBACK</span>
-                </h6>
-            </div>
-            <div class="col-md-3 col-4 step-box">
-                <h6 class="step-title-0">
-                    <span class="fa fa-circle"></span>
-                    <span class="break-line"></span>
-                    <span class="step-title">CONFIRMATION</span>
-                </h6>
-            </div>
-        </div>
+        @include('layout.feedbackHeader')
 
         {{-- <div class="container">
             <!-- Display validation error for cc1 -->
@@ -66,13 +44,9 @@
 
         <div class="container mb-3 mt-0">
             <div class="container border">
-                <h4 class="heading mb-2 text-center">Feedback</h4>
+                {{-- <h4 class="heading mb-2 text-center">Feedback</h4> --}}
                 <div class="px-4">
-                    <p class="mb-3">
-                        INSTRUCTIONS: <b>Check mark (√)</b> your answer to the Citizen's Charter (CC) questions. The
-                        Citizen's Charter is an official document that reflects the sercvies of a government agency/office
-                        including its requirements, fees, and processing times among others.
-                    </p>
+                    @include('layout.ccInstruction')
                     <form action="{{ route('cc2') }}" method="post" class="mt-2">
                         @csrf
                         @method('post')
@@ -114,13 +88,6 @@
                             </tr>
                         </table>
                         <div class="container text-center d-flex justify-content-center my-3">
-                                {{-- <form action="{{ route('termsAndCondition') }}" method="post">
-                                    @csrf
-                                    @method('post')
-                                    <button id="back" class="text-center btn btn-success rounded-1 prev mr-2">
-                                        Back
-                                    </button>
-                                </form> --}}
                             <a href="{{ route('termsAndCondition') }}" class="text-center btn btn-success rounded-1 prev mr-2">Back</a>
                             <input class="text-center btn btn-success rounded-1 prev mr-2" type="submit" value="Next" id="next">
                         </div>

@@ -6,9 +6,10 @@ use Illuminate\Http\Request;
 use DB;
 class feedbackClientController extends Controller
 {
-    public function termsAndCondition(){
+    public function termsAndCondition(Request $request){
         // Retrieve session data
          $customCheck = session('customCheck');
+
         //session()->flush();
 
         // Pass session data to the view
@@ -27,10 +28,10 @@ class feedbackClientController extends Controller
     }
 
     public function cc1Checked(Request $request){
-        $cc1Choices1 = session('cc1Choices1');
-        $cc1Choices2 = session('cc1Choices2');
-        $cc1Choices3 = session('cc1Choices3');
-        $cc1Choices4 = session('cc1Choices4');
+        session('cc1Choices1');
+        session('cc1Choices2');
+        session('cc1Choices3');
+        session('cc1Choices4');
 
         $cc = $this->ccquestion('cc1');
         return view('cc1', compact('cc'));
@@ -50,11 +51,11 @@ class feedbackClientController extends Controller
     }
 
     public function cc2Checked(Request $request){
-        $choices1 = session('cc2Choices1');
-        $choices2 = session('cc2Choices2');
-        $choices3 = session('cc2Choices3');
-        $choices4 = session('cc2Choices4');
-        $choices5 = session('cc2Choices5');
+        session('cc2Choices1');
+        session('cc2Choices2');
+        session('cc2Choices3');
+        session('cc2Choices4');
+        session('cc2Choices5');
 
         $cc = $this->ccquestion('cc2');
         return view('cc2', compact('cc'));
@@ -72,10 +73,10 @@ class feedbackClientController extends Controller
     }
 
     public function cc3Checked(Request $request){
-        $choices1 = session('cc3Choices1');
-        $choices2 = session('cc3Choices2');
-        $choices3 = session('cc3Choices3');
-        $choices4 = session('cc3Choices4');
+        session('cc3Choices1');
+        session('cc3Choices2');
+        session('cc3Choices3');
+        session('cc3Choices4');
 
         $cc = $this->ccquestion('cc3');
         return view('cc3', compact('cc'));
@@ -89,6 +90,11 @@ class feedbackClientController extends Controller
 
         $sqd = $this->sqdquestion('sqd0');
         return view('sqd0', compact('sqd'));
+    }
+
+    public function sqd1(Request $request){
+        $sqd = $this->sqdquestion('sqd1');
+        return view('sqd1', compact('sqd'));
     }
 
     public function confirmation(){
