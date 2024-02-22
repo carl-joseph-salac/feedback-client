@@ -23,9 +23,11 @@ Route::controller(feedbackClientController::class)->group(function () {
     Route::post('/cc3', 'cc3')->name('cc3');
     Route::get('/cc3checked', 'cc3Checked')->name('cc3Checked');
     Route::post('/sqd0', 'sqd0')->name('sqd0');
+    Route::get('/sqd0Star', 'sqd0Star')->name('sqd0Star');
     Route::post('/sqd1', 'sqd1')->name('sqd1');
+    Route::get('/sqd1Star', 'sqd1Star')->name('sqd1Star');
     Route::get('/store', 'store')->name('store');
-    Route::get('/confirmation', 'confirmation')->name('confirmation');
+    Route::post('/confirmation', 'confirmation')->name('confirmation');
     Route::get('/thankyou', 'thankyou')->name('thankyou');
     Route::get('/welcome', 'welcome');
 });

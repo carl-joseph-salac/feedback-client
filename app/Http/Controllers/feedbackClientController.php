@@ -92,12 +92,52 @@ class feedbackClientController extends Controller
         return view('sqd0', compact('sqd'));
     }
 
+    public function sqd0Star(Request $request){
+        // session('sqd0Star5');
+        // session('sqd0Star4');
+        // session('sqd0Star3');
+        // session('sqd0Star2');
+        // session('sqd0Star1');
+
+        //session()->flush();
+
+        session('rating');
+
+        $sqd = $this->sqdquestion('sqd0');
+        return view('sqd0', compact('sqd'));
+    }
+
     public function sqd1(Request $request){
+        // $request->session()->put('sqd0Star5', $request->has('rating'));
+        // $request->session()->put('sqd0Star4', $request->has('rating'));
+        // $request->session()->put('sqd0Star3', $request->has('rating'));
+        // $request->session()->put('sqd0Star2', $request->has('rating'));
+        // $request->session()->put('sqd0Star1', $request->has('rating'));
+
+        $request->session()->put('rating', $request->rating);
+
         $sqd = $this->sqdquestion('sqd1');
         return view('sqd1', compact('sqd'));
     }
 
-    public function confirmation(){
+    public function sqd1Star(Request $request){
+        // session('sqd0Star5');
+        // session('sqd0Star4');
+        // session('sqd0Star3');
+        // session('sqd0Star2');
+        // session('sqd0Star1');
+
+        //session()->flush();
+
+        session('rating1');
+
+        $sqd = $this->sqdquestion('sqd1');
+        return view('sqd1', compact('sqd'));
+    }
+
+    public function confirmation(Request $request){
+        $request->session()->put('rating1', $request->rating1);
+
         return view('confirmation');
     }
 

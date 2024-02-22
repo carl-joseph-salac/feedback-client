@@ -69,11 +69,11 @@
         cursor: pointer;
     }
 
-    .rating>.half:before {
+    /* .rating>.half:before {
         content: '\f089';
         position: absolute;
         cursor: pointer;
-    }
+    } */
 
 
     .rating>label {
@@ -85,7 +85,7 @@
     .rating>input:checked~label,
     .rating:not(:checked)>label:hover,
     .rating:not(:checked)>label:hover~label {
-        color: #2ce679;
+        color: #00fc69;
     }
 
     .rating>input:checked+label:hover,

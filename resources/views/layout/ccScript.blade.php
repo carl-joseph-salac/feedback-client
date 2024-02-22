@@ -5,7 +5,7 @@
         $(this).prop('checked', true);
     });
 
-    // Function to enable or disable the submit button based on checkbox status by adding/removing disabled attribute
+    // Function to enable or disable the next button based on checkbox status by adding/removing disabled attribute
     function checkSubmitEnabled() {
         const checkboxes = document.querySelectorAll('.checkboxes');
         const submitButton = document.getElementById('next');
