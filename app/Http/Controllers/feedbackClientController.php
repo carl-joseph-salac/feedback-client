@@ -108,11 +108,6 @@ class feedbackClientController extends Controller
     }
 
     public function sqd1(Request $request){
-        // $request->session()->put('sqd0Star5', $request->has('rating'));
-        // $request->session()->put('sqd0Star4', $request->has('rating'));
-        // $request->session()->put('sqd0Star3', $request->has('rating'));
-        // $request->session()->put('sqd0Star2', $request->has('rating'));
-        // $request->session()->put('sqd0Star1', $request->has('rating'));
 
         $request->session()->put('rating', $request->rating);
 
@@ -121,14 +116,6 @@ class feedbackClientController extends Controller
     }
 
     public function sqd1Star(Request $request){
-        // session('sqd0Star5');
-        // session('sqd0Star4');
-        // session('sqd0Star3');
-        // session('sqd0Star2');
-        // session('sqd0Star1');
-
-        //session()->flush();
-
         session('rating1');
 
         $sqd = $this->sqdquestion('sqd1');

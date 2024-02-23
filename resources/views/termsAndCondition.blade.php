@@ -8,41 +8,6 @@
     </style>
 @endsection
 
-@section('additionalScript')
-    <script>
-        const startBtn = document.getElementById("start");
-        const checkbox = document.getElementById("customCheck");
-
-        checkbox.addEventListener("change", function() {
-            if (this.checked) {
-                startBtn.removeAttribute("disabled");
-            } else {
-                startBtn.setAttribute("disabled", "disabled");
-            }
-        });
-
-        //function to handle enabling/disabling the button based on checkbox state
-        function handleButtonState() {
-            const startBtn = document.getElementById("start");
-            const checkbox = document.getElementById("customCheck");
-
-            // Check if the checkbox was previously checked (based on session data)
-            const checkboxChecked = "{{ session('customCheck') }}" == '1'; // Convert session data to boolean
-
-            // Enable or disable the button based on checkbox state
-            if (checkboxChecked) {
-                startBtn.removeAttribute("disabled");
-            } else {
-                startBtn.setAttribute("disabled", "disabled");
-            }
-        }
-
-        // Call the function when the page loads
-        window.onload = function() {
-            handleButtonState();
-        };
-    </script>
-@endsection
 
 @section('section')
     <div class="card b-0 rounded-0 show">
@@ -74,15 +39,7 @@
             @method('post')
             <div class="p-3 justify-content-center text-center">
                 <h4 class="heading">Terms and Conditions</h4>
-                {{-- <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
-                      Default checkbox
-                    </label>
-                </div> --}}
                 <div class="custom-control custom-checkbox mb-4">
-                    {{-- <input class="checkboxes" type="checkbox" name="cc1Choices2" id="cc1Choices2"
-                        value="2. {{ $cc->choices2 }}" {{ session('cc1Choices2') ? 'checked' : '' }}> --}}
                     <input id="customCheck" name="customCheck" type="checkbox"
                         class="custom-control-input hover-cursor-pointer" {{ $customCheck ? 'checked' : '' }}>
                     <label id="customLabel" for="customCheck" class="custom-control-label">
@@ -100,17 +57,58 @@
                         </ol>
                     </div>
                 </div>
-                {{-- <input class="text-center btn btn-success rounded-1 prev mr-2" type="submit" value="start" disabled id="start"> --}}
                 <button type="submit" disabled id="start" class="btn btn-success rounded-1 mb-5">
                     START
                 </button>
-                {{-- <a href="{{route('cc1') }}" id="start" class="btn btn-success rounded-1 mb-5 disabled" style="pointer-events: none; cursor: default;">
-                START
-            </a> --}}
             </div>
         </form>
     </div>
 @endsection
+
+{{-- @section('additionalScript')
+    <script>
+        const startBtn = document.getElementById("start");
+        const checkbox = document.getElementById("customCheck");
+
+        checkbox.addEventListener("change", function() {
+            if (this.checked) {
+                startBtn.removeAttribute("disabled");
+            } else {
+                startBtn.setAttribute("disabled", "disabled");
+            }
+        });
+
+        //function to handle enabling/disabling the button based on checkbox state
+        function handleButtonState() {
+            const startBtn = document.getElementById("start");
+            const checkbox = document.getElementById("customCheck");
+
+            // Check if the checkbox was previously checked (based on session data)
+            const checkboxChecked = "{{ session('customCheck') }}" == '1'; // Convert session data to boolean
+
+            // Enable or disable the button based on checkbox state
+            if (checkboxChecked) {
+                startBtn.removeAttribute("disabled");
+            } else {
+                startBtn.setAttribute("disabled", "disabled");
+            }
+        }
+
+        window.onload = function() {
+            var customCheck = "{{ session('customCheck', '') }}";
+            if (customCheck !== '') {
+                document.getElementById('start').disabled = false;
+            }
+        };
+
+        // // Call the function when the page loads
+        // window.onload = function() {
+        //     handleButtonState();
+        // };
+    </script>
+@endsection --}}
+
+
 
 {{-- //Using anchor tag
     <form method="post" action="{{ route('cc1') }}">
