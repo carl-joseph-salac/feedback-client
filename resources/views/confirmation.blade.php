@@ -48,7 +48,7 @@
                     @endif
                 </div>
             </div>
-            <a href="{{ route('sqd1Star') }}" class="btn btn-success rounded-1 mb-5 prev">Back</a>
+            <a href="{{ route('sqd3Star') }}" class="btn btn-success rounded-1 mb-5 prev">Back</a>
             <a href="{{ route('thankyou') }}" id="next3" class="btn btn-success rounded-1 mb-5 next">Confirm</a>
         </div>
     </div>

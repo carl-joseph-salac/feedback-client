@@ -23,6 +23,7 @@ class feedbackClientController extends Controller
         // // Redirect back to the previous step with the previously submitted form data
         // return redirect()->back()->withInput($formData);
         $request->session()->put('customCheck', $request->has('customCheck'));
+
         $cc = $this->ccquestion('cc1');
         return view('cc1', compact('cc'));
     }
@@ -93,37 +94,56 @@ class feedbackClientController extends Controller
     }
 
     public function sqd0Star(Request $request){
-        // session('sqd0Star5');
-        // session('sqd0Star4');
-        // session('sqd0Star3');
-        // session('sqd0Star2');
-        // session('sqd0Star1');
-
-        //session()->flush();
-
-        session('rating');
+        session('sqd0');
 
         $sqd = $this->sqdquestion('sqd0');
         return view('sqd0', compact('sqd'));
     }
 
     public function sqd1(Request $request){
-
-        $request->session()->put('rating', $request->rating);
+        $request->session()->put('sqd0', $request->sqd0);
 
         $sqd = $this->sqdquestion('sqd1');
         return view('sqd1', compact('sqd'));
     }
 
     public function sqd1Star(Request $request){
-        session('rating1');
+        session('sqd1');
 
         $sqd = $this->sqdquestion('sqd1');
         return view('sqd1', compact('sqd'));
     }
 
+    public function sqd2(Request $request){
+        $request->session()->put('sqd1', $request->sqd1);
+
+        $sqd = $this->sqdquestion('sqd2');
+        return view('sqd2', compact('sqd'));
+    }
+
+    public function sqd2Star(Request $request){
+        session('sqd2');
+
+        $sqd = $this->sqdquestion('sqd2');
+        return view('sqd2', compact('sqd'));
+    }
+
+    public function sqd3(Request $request){
+        $request->session()->put('sqd2', $request->sqd2);
+
+        $sqd = $this->sqdquestion('sqd3');
+        return view('sqd3', compact('sqd'));
+    }
+
+    public function sqd3Star(Request $request){
+        session('sqd3');
+
+        $sqd = $this->sqdquestion('sqd3');
+        return view('sqd3', compact('sqd'));
+    }
+
     public function confirmation(Request $request){
-        $request->session()->put('rating1', $request->rating1);
+        $request->session()->put('sqd3', $request->sqd3);
 
         return view('confirmation');
     }

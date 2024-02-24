@@ -37,15 +37,6 @@
     });
 
 
-    window.onload = function() {
-        var rating = "{{ session('rating', '') }}";
-        if (rating !== '') {
-            document.getElementById('nextsqd').disabled = false;
-        }
-    };
-
-
-
     /* Function to enable or disable the submit button based on radio button status by adding/removing disabled attribute */
     // function enableNextButton() {
     //     const ratingRadios = document.querySelectorAll('.rating-radio');

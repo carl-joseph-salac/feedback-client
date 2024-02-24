@@ -100,11 +100,6 @@
                 document.getElementById('start').disabled = false;
             }
         };
-
-        // // Call the function when the page loads
-        // window.onload = function() {
-        //     handleButtonState();
-        // };
     </script>
 @endsection --}}
 
