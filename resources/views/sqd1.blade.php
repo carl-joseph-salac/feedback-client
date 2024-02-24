@@ -47,9 +47,9 @@
                                         <input type="radio" id="star1" name="sqd1"
                                         value="{{$sqd->choices1}}" {{ session('sqd1') == $sqd->choices1 ? 'checked' : '' }}/>
                                         <label for="star1" class="full"></label>
+                                        <h6 id="rating-value">{{ session('sqd1ChosenRating') }}</h6>
                                     </fieldset>
                                 </div>
-                                <h6 id="rating-value"></h6>
                             </div>
                         </div>
                         <div class="container text-center d-flex justify-content-center my-3">

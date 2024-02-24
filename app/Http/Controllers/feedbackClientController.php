@@ -95,6 +95,7 @@ class feedbackClientController extends Controller
 
     public function sqd0Star(Request $request){
         session('sqd0');
+        session('sqd0ChosenRating');
 
         $sqd = $this->sqdquestion('sqd0');
         return view('sqd0', compact('sqd'));
@@ -102,6 +103,7 @@ class feedbackClientController extends Controller
 
     public function sqd1(Request $request){
         $request->session()->put('sqd0', $request->sqd0);
+        $request->session()->put('sqd0ChosenRating', $request->input('sqd0'));
 
         $sqd = $this->sqdquestion('sqd1');
         return view('sqd1', compact('sqd'));
@@ -109,6 +111,7 @@ class feedbackClientController extends Controller
 
     public function sqd1Star(Request $request){
         session('sqd1');
+        session('sqd1ChosenRating');
 
         $sqd = $this->sqdquestion('sqd1');
         return view('sqd1', compact('sqd'));
@@ -116,6 +119,7 @@ class feedbackClientController extends Controller
 
     public function sqd2(Request $request){
         $request->session()->put('sqd1', $request->sqd1);
+        $request->session()->put('sqd1ChosenRating', $request->input('sqd1'));
 
         $sqd = $this->sqdquestion('sqd2');
         return view('sqd2', compact('sqd'));
@@ -123,6 +127,7 @@ class feedbackClientController extends Controller
 
     public function sqd2Star(Request $request){
         session('sqd2');
+        session('sqd2ChosenRating');
 
         $sqd = $this->sqdquestion('sqd2');
         return view('sqd2', compact('sqd'));
@@ -130,6 +135,8 @@ class feedbackClientController extends Controller
 
     public function sqd3(Request $request){
         $request->session()->put('sqd2', $request->sqd2);
+        $request->session()->put('sqd2ChosenRating', $request->input('sqd2'));
+
 
         $sqd = $this->sqdquestion('sqd3');
         return view('sqd3', compact('sqd'));
@@ -137,6 +144,7 @@ class feedbackClientController extends Controller
 
     public function sqd3Star(Request $request){
         session('sqd3');
+        session('sqd3ChosenRating');
 
         $sqd = $this->sqdquestion('sqd3');
         return view('sqd3', compact('sqd'));
@@ -144,6 +152,7 @@ class feedbackClientController extends Controller
 
     public function confirmation(Request $request){
         $request->session()->put('sqd3', $request->sqd3);
+        $request->session()->put('sqd3ChosenRating', $request->input('sqd3'));
 
         return view('confirmation');
     }
