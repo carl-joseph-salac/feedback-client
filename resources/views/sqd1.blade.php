@@ -2,6 +2,7 @@
 
 @section('additionalScript')
     <script>
+        /* Enables the 'nextsqd' button if the 'sqd' session variable has a non-empty value when the page loads. */
         window.onload = function() {
         var rating = "{{ session('sqd1', '') }}";
         if (rating !== '') {

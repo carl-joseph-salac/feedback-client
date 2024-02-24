@@ -65,7 +65,7 @@
     </div>
 @endsection
 
-{{-- @section('additionalScript')
+@section('additionalScript')
     <script>
         const startBtn = document.getElementById("start");
         const checkbox = document.getElementById("customCheck");
@@ -94,6 +94,7 @@
             }
         }
 
+        // Enable start button if customCheck session variable is not empty on window load.
         window.onload = function() {
             var customCheck = "{{ session('customCheck', '') }}";
             if (customCheck !== '') {
@@ -101,7 +102,7 @@
             }
         };
     </script>
-@endsection --}}
+@endsection
 
 
 

@@ -2,6 +2,7 @@
 
 @section('additionalScript')
     <script>
+        /* Enables the 'nextsqd' button if the 'sqd' session variable has a non-empty value when the page loads. */
         window.onload = function() {
         var rating = "{{ session('sqd3', '') }}";
         if (rating !== '') {
@@ -18,7 +19,7 @@
             <div class="container border">
                 <div class="px-4">
                     @include('layout.sqdInstruction')
-                    <form action="{{ route('confirmation') }}" method="post">
+                    <form action="{{ route('sqd4') }}" method="post">
                         @csrf
                         @method('post')
                         <p>

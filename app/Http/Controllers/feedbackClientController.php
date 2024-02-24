@@ -137,7 +137,6 @@ class feedbackClientController extends Controller
         $request->session()->put('sqd2', $request->sqd2);
         $request->session()->put('sqd2ChosenRating', $request->input('sqd2'));
 
-
         $sqd = $this->sqdquestion('sqd3');
         return view('sqd3', compact('sqd'));
     }
@@ -150,9 +149,90 @@ class feedbackClientController extends Controller
         return view('sqd3', compact('sqd'));
     }
 
-    public function confirmation(Request $request){
+    public function sqd4(Request $request){
         $request->session()->put('sqd3', $request->sqd3);
         $request->session()->put('sqd3ChosenRating', $request->input('sqd3'));
+
+        $sqd = $this->sqdquestion('sqd4');
+        return view('sqd4', compact('sqd'));
+    }
+
+    public function sqd4Star(Request $request){
+        session('sqd4');
+        session('sqd4ChosenRating');
+
+        $sqd = $this->sqdquestion('sqd4');
+        return view('sqd4', compact('sqd'));
+    }
+
+    public function sqd5(Request $request){
+        $request->session()->put('sqd4', $request->sqd4);
+        $request->session()->put('sqd4ChosenRating', $request->input('sqd4'));
+
+        $sqd = $this->sqdquestion('sqd5');
+        return view('sqd5', compact('sqd'));
+    }
+
+    public function sqd5Star(Request $request){
+        session('sqd5');
+        session('sqd5ChosenRating');
+
+        $sqd = $this->sqdquestion('sqd5');
+        return view('sqd5', compact('sqd'));
+    }
+
+    public function sqd6(Request $request){
+        $request->session()->put('sqd5', $request->sqd5);
+        $request->session()->put('sqd5ChosenRating', $request->input('sqd5'));
+
+        $sqd = $this->sqdquestion('sqd6');
+        return view('sqd6', compact('sqd'));
+    }
+
+    public function sqd6Star(Request $request){
+        session('sqd6');
+        session('sqd6ChosenRating');
+
+        $sqd = $this->sqdquestion('sqd6');
+        return view('sqd6', compact('sqd'));
+    }
+
+    public function sqd7(Request $request){
+        $request->session()->put('sqd6', $request->sqd6);
+        $request->session()->put('sqd6ChosenRating', $request->input('sqd6'));
+
+        $sqd = $this->sqdquestion('sqd7');
+        return view('sqd7', compact('sqd'));
+    }
+
+    public function sqd7Star(Request $request){
+        session('sqd7');
+        session('sqd7ChosenRating');
+
+        $sqd = $this->sqdquestion('sqd7');
+        return view('sqd7', compact('sqd'));
+    }
+
+    public function sqd8(Request $request){
+        $request->session()->put('sqd7', $request->sqd7);
+        $request->session()->put('sqd7ChosenRating', $request->input('sqd7'));
+
+        $sqd = $this->sqdquestion('sqd8');
+        return view('sqd8', compact('sqd'));
+    }
+
+    public function sqd8Star(Request $request){
+        session('sqd8');
+        session('sqd8ChosenRating');
+
+        $sqd = $this->sqdquestion('sqd8');
+        return view('sqd8', compact('sqd'));
+    }
+
+    //
+    public function confirmation(Request $request){
+        $request->session()->put('sqd8', $request->sqd8);
+        $request->session()->put('sqd8ChosenRating', $request->input('sqd8'));
 
         return view('confirmation');
     }

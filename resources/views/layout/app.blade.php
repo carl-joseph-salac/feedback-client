@@ -31,7 +31,6 @@
     @yield('additionalScript')
     @include('layout.ccScript')
     @include('layout.sqdScript')
-    @include('layout.tacScript')
 </body>
 
 </html>
