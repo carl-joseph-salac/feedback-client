@@ -1,5 +1,9 @@
 @extends('layout.app')
 
+@section('addtionalStyle')
+    @include('layout.ccStyle')
+@endsection
+
 @section('section')
     <div class="card rounded-0">
         @include('layout.feedbackHeader')
@@ -61,28 +65,28 @@
                             <tr>
                                 <td></td>
                                 <td><input class="checkboxes" type="checkbox" name="cc1Choices1" id="cc1Choices1"
-                                        value="1. {{ $cc->choices1 }}" {{ session('cc1Choices1') ? 'checked' : '' }}>
+                                        value="{{ $cc->choices1 }}" {{ session('cc1Choices1') ? 'checked' : '' }}>
                                 </td>
                                 <td name="cc1" colspan="2">1. {{ $cc->choices1 }}</td>
                             </tr>
                             <tr>
                                 <td></td>
                                 <td><input class="checkboxes" type="checkbox" name="cc1Choices2" id="cc1Choices2"
-                                        value="2. {{ $cc->choices2 }}" {{ session('cc1Choices2') ? 'checked' : '' }}>
+                                        value="{{ $cc->choices2 }}" {{ session('cc1Choices2') ? 'checked' : '' }}>
                                 </td>
                                 <td name="cc2" colspan="2">2. {{ $cc->choices2 }} </td>
                             </tr>
                             <tr>
                                 <td></td>
                                 <td><input class="checkboxes" type="checkbox" name="cc1Choices3" id="cc1Choices3"
-                                        value="3. {{ $cc->choices3 }}" {{ session('cc1Choices3') ? 'checked' : '' }}>
+                                        value="{{ $cc->choices3 }}" {{ session('cc1Choices3') ? 'checked' : '' }}>
                                 </td>
                                 <td name="cc3" colspan="2">3. {{ $cc->choices3 }} </td>
                             </tr>
                             <tr>
                                 <td></td>
                                 <td><input class="checkboxes" type="checkbox" name="cc1Choices4" id="cc1Choices4"
-                                        value="4. {{ $cc->choices4 }}" {{ session('cc1Choices4') ? 'checked' : '' }}>
+                                        value="{{ $cc->choices4 }}" {{ session('cc1Choices4') ? 'checked' : '' }}>
                                 </td>
                                 <td name="cc4" colspan="2">4. {{ $cc->choices4 }} </td>
                             </tr>
@@ -96,4 +100,8 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('additionalScript')
+    @include('layout.ccScript')
 @endsection

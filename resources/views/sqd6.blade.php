@@ -1,15 +1,7 @@
 @extends('layout.app')
 
-@section('additionalScript')
-    <script>
-        /* Enables the 'nextsqd' button if the 'sqd' session variable has a non-empty value when the page loads. */
-        window.onload = function() {
-        var rating = "{{ session('sqd6', '') }}";
-        if (rating !== '') {
-            document.getElementById('nextsqd').disabled = false;
-        }
-    };
-    </script>
+@section('addtionalStyle')
+    @include('layout.sqdStyle')
 @endsection
 
 @section('section')
@@ -62,4 +54,17 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('additionalScript')
+    @include('layout.sqdScript')
+    <script>
+        /* Enables the 'nextsqd' button if the 'sqd' session variable has a non-empty value when the page loads. */
+        window.onload = function() {
+        var rating = "{{ session('sqd6', '') }}";
+        if (rating !== '') {
+            document.getElementById('nextsqd').disabled = false;
+        }
+    };
+    </script>
 @endsection

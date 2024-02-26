@@ -40,7 +40,7 @@ Route::controller(feedbackClientController::class)->group(function () {
     Route::get('/sqd7Star', 'sqd7Star')->name('sqd7Star');
     Route::post('/sqd8', 'sqd8')->name('sqd8');
     Route::get('/sqd8Star', 'sqd8Star')->name('sqd8Star');
-    Route::get('/store', 'store')->name('store');
+    Route::post('/suggestion', 'suggestion')->name('suggestion');
     Route::post('/confirmation', 'confirmation')->name('confirmation');
     Route::get('/thankyou', 'thankyou')->name('thankyou');
     Route::get('/welcome', 'welcome');

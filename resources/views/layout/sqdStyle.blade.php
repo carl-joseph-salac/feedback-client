@@ -57,4 +57,8 @@
     .rating>input:checked~label:hover~label {
         color: #2ddc76;
     }
+
+    #nextsqd {
+        width: 63px;
+    }
 </style>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+
 class feedbackClientController extends Controller
 {
     public function termsAndCondition(Request $request){
@@ -17,11 +18,6 @@ class feedbackClientController extends Controller
     }
 
     public function cc1(Request $request){
-        // // Retrieve previously stored form data from session
-        // $formData = $request->session()->get('form_data');
-
-        // // Redirect back to the previous step with the previously submitted form data
-        // return redirect()->back()->withInput($formData);
         $request->session()->put('customCheck', $request->has('customCheck'));
 
         $cc = $this->ccquestion('cc1');
@@ -29,10 +25,10 @@ class feedbackClientController extends Controller
     }
 
     public function cc1Checked(Request $request){
-        session('cc1Choices1');
-        session('cc1Choices2');
-        session('cc1Choices3');
-        session('cc1Choices4');
+        // session('cc1Choices1');
+        // session('cc1Choices2');
+        // session('cc1Choices3');
+        // session('cc1Choices4');
 
         $cc = $this->ccquestion('cc1');
         return view('cc1', compact('cc'));
@@ -40,26 +36,28 @@ class feedbackClientController extends Controller
 
 
     public function cc2(Request $request){
-        // // Store the form data in the session
-        // $request->session()->put('form_data', $request->all());
         $request->session()->put('cc1Choices1', $request->has('cc1Choices1'));
         $request->session()->put('cc1Choices2', $request->has('cc1Choices2'));
         $request->session()->put('cc1Choices3', $request->has('cc1Choices3'));
         $request->session()->put('cc1Choices4', $request->has('cc1Choices4'));
+        $request->session()->put('cc1Choices1Value', $request->input('cc1Choices1'));
+        $request->session()->put('cc1Choices2Value', $request->input('cc1Choices2'));
+        $request->session()->put('cc1Choices3Value', $request->input('cc1Choices3'));
+        $request->session()->put('cc1Choices4Value', $request->input('cc1Choices4'));
 
         $cc = $this->ccquestion('cc2');
         return view('cc2', compact('cc'));
     }
 
     public function cc2Checked(Request $request){
-        session('cc2Choices1');
-        session('cc2Choices2');
-        session('cc2Choices3');
-        session('cc2Choices4');
-        session('cc2Choices5');
+        // session('cc2Choices1');
+        // session('cc2Choices2');
+        // session('cc2Choices3');
+        // session('cc2Choices4');
+        // session('cc2Choices5');
 
         $cc = $this->ccquestion('cc2');
-        return view('cc2', compact('cc'));
+        return view('cc2', compact('cc',));
     }
 
     public function cc3(Request $request){
@@ -68,16 +66,22 @@ class feedbackClientController extends Controller
         $request->session()->put('cc2Choices3', $request->has('cc2Choices3'));
         $request->session()->put('cc2Choices4', $request->has('cc2Choices4'));
         $request->session()->put('cc2Choices5', $request->has('cc2Choices5'));
+        $request->session()->put('cc2Choices1Value', $request->input('cc2Choices1'));
+        $request->session()->put('cc2Choices2Value', $request->input('cc2Choices2'));
+        $request->session()->put('cc2Choices3Value', $request->input('cc2Choices3'));
+        $request->session()->put('cc2Choices4Value', $request->input('cc2Choices4'));
+        $request->session()->put('cc2Choices5Value', $request->input('cc2Choices5'));
 
         $cc = $this->ccquestion('cc3');
         return view('cc3', compact('cc'));
     }
 
     public function cc3Checked(Request $request){
-        session('cc3Choices1');
-        session('cc3Choices2');
-        session('cc3Choices3');
-        session('cc3Choices4');
+        // session('cc3Choices1');
+        // session('cc3Choices2');
+        // session('cc3Choices3');
+        // session('cc3Choices4');
+        // session('cc2Choices2');
 
         $cc = $this->ccquestion('cc3');
         return view('cc3', compact('cc'));
@@ -88,14 +92,18 @@ class feedbackClientController extends Controller
         $request->session()->put('cc3Choices2', $request->has('cc3Choices2'));
         $request->session()->put('cc3Choices3', $request->has('cc3Choices3'));
         $request->session()->put('cc3Choices4', $request->has('cc3Choices4'));
+        $request->session()->put('cc3Choices1Value', $request->input('cc3Choices1'));
+        $request->session()->put('cc3Choices2Value', $request->input('cc3Choices2'));
+        $request->session()->put('cc3Choices3Value', $request->input('cc3Choices3'));
+        $request->session()->put('cc3Choices4Value', $request->input('cc3Choices4'));
 
         $sqd = $this->sqdquestion('sqd0');
         return view('sqd0', compact('sqd'));
     }
 
     public function sqd0Star(Request $request){
-        session('sqd0');
-        session('sqd0ChosenRating');
+        // session('sqd0');
+        // session('sqd0ChosenRating');
 
         $sqd = $this->sqdquestion('sqd0');
         return view('sqd0', compact('sqd'));
@@ -110,8 +118,8 @@ class feedbackClientController extends Controller
     }
 
     public function sqd1Star(Request $request){
-        session('sqd1');
-        session('sqd1ChosenRating');
+        // session('sqd1');
+        // session('sqd1ChosenRating');
 
         $sqd = $this->sqdquestion('sqd1');
         return view('sqd1', compact('sqd'));
@@ -126,8 +134,8 @@ class feedbackClientController extends Controller
     }
 
     public function sqd2Star(Request $request){
-        session('sqd2');
-        session('sqd2ChosenRating');
+        // session('sqd2');
+        // session('sqd2ChosenRating');
 
         $sqd = $this->sqdquestion('sqd2');
         return view('sqd2', compact('sqd'));
@@ -142,8 +150,8 @@ class feedbackClientController extends Controller
     }
 
     public function sqd3Star(Request $request){
-        session('sqd3');
-        session('sqd3ChosenRating');
+        // session('sqd3');
+        // session('sqd3ChosenRating');
 
         $sqd = $this->sqdquestion('sqd3');
         return view('sqd3', compact('sqd'));
@@ -158,8 +166,8 @@ class feedbackClientController extends Controller
     }
 
     public function sqd4Star(Request $request){
-        session('sqd4');
-        session('sqd4ChosenRating');
+        // session('sqd4');
+        // session('sqd4ChosenRating');
 
         $sqd = $this->sqdquestion('sqd4');
         return view('sqd4', compact('sqd'));
@@ -174,8 +182,8 @@ class feedbackClientController extends Controller
     }
 
     public function sqd5Star(Request $request){
-        session('sqd5');
-        session('sqd5ChosenRating');
+        // session('sqd5');
+        // session('sqd5ChosenRating');
 
         $sqd = $this->sqdquestion('sqd5');
         return view('sqd5', compact('sqd'));
@@ -190,8 +198,8 @@ class feedbackClientController extends Controller
     }
 
     public function sqd6Star(Request $request){
-        session('sqd6');
-        session('sqd6ChosenRating');
+        // session('sqd6');
+        // session('sqd6ChosenRating');
 
         $sqd = $this->sqdquestion('sqd6');
         return view('sqd6', compact('sqd'));
@@ -206,8 +214,8 @@ class feedbackClientController extends Controller
     }
 
     public function sqd7Star(Request $request){
-        session('sqd7');
-        session('sqd7ChosenRating');
+        // session('sqd7');
+        // session('sqd7ChosenRating');
 
         $sqd = $this->sqdquestion('sqd7');
         return view('sqd7', compact('sqd'));
@@ -222,55 +230,41 @@ class feedbackClientController extends Controller
     }
 
     public function sqd8Star(Request $request){
-        session('sqd8');
-        session('sqd8ChosenRating');
+        // session('sqd8');
+        // session('sqd8ChosenRating');
 
         $sqd = $this->sqdquestion('sqd8');
         return view('sqd8', compact('sqd'));
     }
 
-    //
-    public function confirmation(Request $request){
+    public function suggestion (Request $request){
         $request->session()->put('sqd8', $request->sqd8);
         $request->session()->put('sqd8ChosenRating', $request->input('sqd8'));
+
+        return view('suggestion');
+    }
+
+    public function confirmation(Request $request){
+        // session('cc1Choices1Value');
+        // session('cc1Choices2Value');
+        // session('cc1Choices3Value');
+        // session('cc1Choices4Value');
+
+        // session('cc2Choices1Value');
+        // session('cc2Choices2Value');
+        // session('cc2Choices3Value');
+        // session('cc2Choices4Value');
+        // session('cc2Choices5Value');
+        // session('cc3Choices1Value');
+        // session('cc3Choices2Value');
+        // session('cc3Choices3Value');
+        // session('cc3Choices4Value');
 
         return view('confirmation');
     }
 
     public function thankyou(){
         return view('thankyou');
-    }
-
-    public function store(Request $request){
-        $cc1 = DB::table('tbl_cc_question');
-        // Validate the input
-        $validatedData = $request->validate([
-            'cc1' => 'nullable',
-            'cc2' => 'nullable',
-            'cc3' => 'nullable',
-            'cc4' => 'nullable'
-        ]);
-
-        // Store the validated data in the session
-        $request->session()->put('form_data', $validatedData);
-
-        // Redirect to the confirmation page
-        return redirect()->route('confirmation', compact('cc1'));
-    }
-
-    public function show()
-    {
-        // Check if the session variable exists
-        if (session()->has('form_data')) {
-            // Retrieve the stored form data from the session
-            $formData = session('form_data');
-
-            // Pass the form data to the confirmation view
-            return view('confirmation', compact('formData'));
-        } else {
-            // Handle the case when form data is not found in the session
-            abort(404); // or redirect to an error page
-        }
     }
 
     private function ccquestion($question_no){
