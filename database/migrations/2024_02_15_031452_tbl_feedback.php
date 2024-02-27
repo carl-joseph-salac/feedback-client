@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('tbl_feedback', function (Blueprint $table) {
             $table->id();
             $table->string('purpose');
+            $table->string('clientNumber');
             $table->string('feedbackNumber');
             $table->string('cc1');
             $table->string('cc2');
@@ -27,6 +28,7 @@ return new class extends Migration
             $table->string('sqd6');
             $table->string('sqd7');
             $table->string('sqd8');
+            $table->timestamp('feedback_date')->userCurrent();
             $table->string('suggestion')->nullable();
             $table->index(['feedbackNumber']);
         });

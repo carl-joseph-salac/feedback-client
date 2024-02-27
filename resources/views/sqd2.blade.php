@@ -1,6 +1,6 @@
 @extends('layout.app')
 
-@section('addtionalStyle')
+@section('additionalStyle')
     @include('layout.sqdStyle')
 @endsection
 
@@ -40,7 +40,7 @@
                                         <input type="radio" id="star1" name="sqd2"
                                         value="{{$sqd->choices1}}" {{ session('sqd2') == $sqd->choices1 ? 'checked' : '' }}/>
                                         <label for="star1" class="full"></label>
-                                        <h6 id="rating-value">{{ session('sqd2ChosenRating') }}</h6>
+                                        <h6 id="rating-value">{{ session('sqd2') }}</h6>
                                     </fieldset>
                                 </div>
                             </div>

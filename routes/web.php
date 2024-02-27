@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::controller(feedbackClientController::class)->group(function () {
-    Route::get('/', 'termsAndCondition')->name('termsAndCondition');
+    Route::get('/feedback', 'termsAndCondition')->name('termsAndCondition');
     Route::post('/cc1', 'cc1')->name('cc1');
     Route::get('/cc1checked', 'cc1Checked')->name('cc1Checked');
     Route::post('/cc2', 'cc2')->name('cc2');
@@ -41,9 +41,9 @@ Route::controller(feedbackClientController::class)->group(function () {
     Route::post('/sqd8', 'sqd8')->name('sqd8');
     Route::get('/sqd8Star', 'sqd8Star')->name('sqd8Star');
     Route::post('/suggestion', 'suggestion')->name('suggestion');
+    Route::get('/suggestion/answered', 'suggestionAnswered')->name('suggestionAnswered');
     Route::post('/confirmation', 'confirmation')->name('confirmation');
-    Route::get('/thankyou', 'thankyou')->name('thankyou');
-    Route::get('/welcome', 'welcome');
+    Route::post('/submitFeedback', 'saveFeedback')->name('submitFeedback');
 });
 
 /*

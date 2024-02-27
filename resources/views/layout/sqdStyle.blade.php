@@ -10,7 +10,7 @@
         align-items: center;
         justify-content: center;
         height: 100%;
-        margin-right: 10px
+        margin-right: 18px
     }
 
     #rating-value {

@@ -1,6 +1,6 @@
 @extends('layout.app')
 
-@section('addtionalStyle')
+@section('additionalStyle')
     <style>
         #customLabel:hover {
             cursor: pointer;

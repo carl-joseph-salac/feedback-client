@@ -1,4 +1,17 @@
 @extends('layout.app')
+
+@section('additionalStyle')
+    <style>
+        #confirm {
+            width: 75px;
+        }
+
+        table tr td {
+            padding: 5px;
+        }
+    </style>
+@endsection
+
 @section('section')
     <div class="card b-0 rounded-0">
         <div class="row justify-content-center mx-auto step-container">
@@ -24,56 +37,79 @@
                 </h6>
             </div>
         </div>
-        <div class="p-3 justify-content-center text-center">
-            {{-- <h4 class="heading">Confirmation</h4> --}}
-            <div class="row d-flex justify-content-center">
-                <div class="mb-4">
-                    <h6 class="confirm">Verify all entered details and press confirm</h6>
-                </div>
-                <div class="container">
-                    @for ($i = 1; $i <= 4; $i++)
-                        @if (session('cc1Choices' . $i . 'Value'))
-                            <p>CC1 : {{ session('cc1Choices' . $i . 'Value') }}</p>
-                        @endif
-                    @endfor
-                    @for ($i = 1; $i <= 5; $i++)
-                        @if (session('cc2Choices' . $i . 'Value'))
-                            <p>CC2 : {{ session('cc2Choices' . $i . 'Value') }}</p>
-                        @endif
-                    @endfor
-                    @for ($i = 1; $i <= 4; $i++)
-                        @if (session('cc3Choices' . $i . 'Value'))
-                            <p>CC3 : {{ session('cc3Choices' . $i . 'Value') }}</p>
-                        @endif
-                    @endfor
-                    <p>The chosen rating is: {{ session('sqd0ChosenRating') }}</p>
-                    <p>The chosen rating is: {{ session('sqd1ChosenRating') }}</p>
-                    <p>The chosen rating is: {{ session('sqd2ChosenRating') }}</p>
-                    <p>The chosen rating is: {{ session('sqd3ChosenRating') }}</p>
-                    <p>The chosen rating is: {{ session('sqd4ChosenRating') }}</p>
-                    <p>The chosen rating is: {{ session('sqd5ChosenRating') }}</p>
-                    <p>The chosen rating is: {{ session('sqd6ChosenRating') }}</p>
-                    <p>The chosen rating is: {{ session('sqd7ChosenRating') }}</p>
-                    <p>The chosen rating is: {{ session('sqd8ChosenRating') }}</p>
-                    {{-- <p>
-                        <strong class="mr-3">{{strtoupper($formData['question_no'])}}</strong>{{$formData['question']}}
-                    </p>
-                    @if (isset($formData['cc2Choices1']))
-                        <p>{{ $formData['cc2Choices1'] }}</p>
-                    @endif
-                    @if (isset($formData['cc2Choices2']))
-                        <p>{{ $formData['cc2Choices2'] }}</p>
-                    @endif
-                    @if (isset($formData['cc2Choices3']))
-                        <p>{{ $formData['cc2Choices3'] }}</p>
-                    @endif
-                    @if (isset($formData['cc2Choices4']))
-                        <p>{{ $formData['cc2Choices4'] }}</p>
-                    @endif --}}
+
+        <div class="container mb-3 mt-0">
+            <h6 class="confirm text-center">Verify all entered details and press confirm</h6>
+            <div class="container border">
+                <div class="px-4">
+                    <form action="{{ route('submitFeedback') }}" method="post">
+                        @csrf
+                        @method('post')
+
+                        <div class="container">
+                            <table>
+                                @foreach ($cc as $question)
+                                    <tr>
+                                        <td><strong>{{ strtoupper($question->question_no) }}</strong> </td>
+                                        <td>{{ $question->question }}</td>
+                                        <td rowspan="2">
+                                            <a href="{{ route($question->question_no . 'Checked') }}"
+                                                class="text-center btn btn-success rounded-1 prev mr-2">Edit</a>
+                                        </td>
+                                    </tr>
+                                    <tr class="border-bottom">
+                                        <td></td>
+                                        <td>
+                                            <span class="fa fa-circle bg-success"></span>
+                                            {{ session($question->question_no) }}
+                                        </td>
+                                    </tr>
+                                @endforeach
+                                @foreach ($sqd as $question)
+                                    <tr>
+                                        <td><strong>{{ strtoupper($question->question_no) }}</strong> </td>
+                                        <td>{{ $question->question }}</td>
+                                        <td rowspan="2">
+                                            <a href="{{ route($question->question_no . 'Star') }}"
+                                                class="text-center btn btn-success rounded-1 prev mr-2">Edit</a>
+                                        </td>
+                                    </tr>
+                                    <tr class="border-bottom">
+                                        <td></td>
+                                        <td>
+                                            <span class="fa fa-circle bg-success"></span>
+                                            {{ session($question->question_no) }}
+                                        </td>
+                                    </tr>
+                                @endforeach
+                                <tr>
+                                    <td>
+                                        <strong>SUGGESTION</strong>
+                                    </td>
+                                    <td></td>
+                                    <td rowspan="2">
+                                        <a href="{{ route('suggestionAnswered') }}"
+                                            class="text-center btn btn-success rounded-1 prev mr-2">Edit</a>
+                                    </td>
+                                </tr>
+                                <tr class="border-bottom">
+                                    <td></td>
+                                    <td>
+                                        <span class="fa fa-circle bg-success"></span>
+                                        {{ session('suggestion') }}
+                                    </td>
+
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="container text-center d-flex justify-content-center my-3">
+                            <a href="{{ route('suggestionAnswered') }}"
+                                class="text-center btn btn-success rounded-1 prev mr-2">Back</a>
+                            <input class="text-center btn btn-success btn-sm rounded-1 prev mr-2" type="submit"
+                                value="Confirm" id="confirm">
+                        </div>
+                    </form>
                 </div>
             </div>
-            <a href="{{ route('suggestion') }}" class="btn btn-success rounded-1 mb-5 prev">Back</a>
-            <a href="{{ route('thankyou') }}" id="next3" class="btn btn-success rounded-1 mb-5 next">Confirm</a>
         </div>
     </div>
-@endsection
