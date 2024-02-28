@@ -9,6 +9,10 @@
         table tr td {
             padding: 5px;
         }
+
+        .btn{
+            width: 60px;
+        }
     </style>
 @endsection
 
@@ -39,9 +43,9 @@
         </div>
 
         <div class="container mb-3 mt-0">
-            <h6 class="confirm text-center">Verify all entered details and press confirm</h6>
-            <div class="container border">
-                <div class="px-4">
+            <h6 class="confirm text-center">Review the provided feedback and click ‘Confirm’</h6>
+            <div class="container rounded border">
+                <div >
                     <form action="{{ route('submitFeedback') }}" method="post">
                         @csrf
                         @method('post')
@@ -54,7 +58,7 @@
                                         <td>{{ $question->question }}</td>
                                         <td rowspan="2">
                                             <a href="{{ route($question->question_no . 'Checked') }}"
-                                                class="text-center btn btn-success rounded-1 prev mr-2">Edit</a>
+                                                class="btn btn-success btn-sm rounded-1" type="button" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit mr-1"></i>Edit</a>
                                         </td>
                                     </tr>
                                     <tr class="border-bottom">
@@ -71,7 +75,7 @@
                                         <td>{{ $question->question }}</td>
                                         <td rowspan="2">
                                             <a href="{{ route($question->question_no . 'Star') }}"
-                                                class="text-center btn btn-success rounded-1 prev mr-2">Edit</a>
+                                                class="btn btn-success btn-sm rounded-1" type="button" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit mr-1"></i>Edit</a>
                                         </td>
                                     </tr>
                                     <tr class="border-bottom">
@@ -89,7 +93,7 @@
                                     <td></td>
                                     <td rowspan="2">
                                         <a href="{{ route('suggestionAnswered') }}"
-                                            class="text-center btn btn-success rounded-1 prev mr-2">Edit</a>
+                                        class="btn btn-success btn-sm rounded-1" type="button" data-toggle="tooltip" data-placement="top" title="Edit" id="suggestion"><i class="fa fa-edit mr-1"></i>Edit</a>
                                     </td>
                                 </tr>
                                 <tr class="border-bottom">
@@ -98,7 +102,6 @@
                                         <span class="fa fa-circle bg-success"></span>
                                         {{ session('suggestion') }}
                                     </td>
-
                                 </tr>
                             </table>
                         </div>
@@ -113,3 +116,4 @@
             </div>
         </div>
     </div>
+@endsection

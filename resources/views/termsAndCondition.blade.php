@@ -17,6 +17,7 @@
                     <span class="fa fa-circle"></span>
                     <span class="break-line"></span>
                     <span class="step-title">TERMS AND CONDITIONS</span>
+                    <a href="http://localhost:8000/feedback-client/public/feedback?logsNumber={{uniqid()}}">Give Feedback</a>
                 </h6>
             </div>
             <div class="col-md-3 col-4 step-box">
@@ -103,30 +104,3 @@
         };
     </script>
 @endsection
-
-
-
-{{-- //Using anchor tag
-    <form method="post" action="{{ route('cc1') }}">
-                @csrf
-                @method('post')
-                <input class="text-center btn btn-success rounded-1 prev mr-2 disabled" type="submit" value="Next" id="next">
-            </form>
-
-<script>
-    //Enable button whenever checkbox is checked, disable when unchecked
-        const startBtn = document.getElementById("next");
-        const checkbox = document.getElementById("customCheck");
-
-        checkbox.addEventListener("change", function() {
-            if (this.checked) {
-                startBtn.classList.remove("disabled");
-                startBtn.style.pointerEvents = "auto";
-                startBtn.style.cursor = "pointer";
-            } else {
-                startBtn.classList.add("disabled");
-                startBtn.style.pointerEvents = "none";
-                startBtn.style.cursor = "default";
-            }
-        });
-</script> --}}

@@ -45,21 +45,3 @@ Route::controller(feedbackClientController::class)->group(function () {
     Route::post('/confirmation', 'confirmation')->name('confirmation');
     Route::post('/submitFeedback', 'saveFeedback')->name('submitFeedback');
 });
-
-/*
-Route::get('/terms-and-condition', function () {
-    return view('termsAndCondition');
-});
-
-Route::get('/feedback', function () {
-    return view('feedback');
-});
-
-Route::get('/confirmation', function () {
-    return view('confirmation');
-});
-
-Route::get('/thankyou', function () {
-    return view('thankyou');
-});
-*/

@@ -40,7 +40,6 @@ class feedbackClientController extends Controller
     }
 
     public function cc3(Request $request){
-        // $request->session()->put('cc2', $request->cc2);
         session(['cc2' => $request->input('cc2')]);
         $cc = $this->ccquestion('cc3');
         return view('cc3', compact('cc'));
@@ -52,7 +51,6 @@ class feedbackClientController extends Controller
     }
 
     public function sqd0(Request $request){
-        // $request->session()->put('cc3', $request->cc3);
         session(['cc3' => $request->input('cc3')]);
         $sqd = $this->sqdquestion('sqd0');
         return view('sqd0', compact('sqd'));
@@ -79,9 +77,6 @@ class feedbackClientController extends Controller
 
     public function sqd2(Request $request){
         session(['sqd1' => $request->input('sqd1')]);
-        // $request->session()->put('sqd1', $request->sqd1);
-        // $request->session()->put('sqd1ChosenRating', $request->input('sqd1'));
-
         $sqd = $this->sqdquestion('sqd2');
         return view('sqd2', compact('sqd'));
     }
@@ -93,9 +88,6 @@ class feedbackClientController extends Controller
 
     public function sqd3(Request $request){
         session(['sqd2' => $request->input('sqd2')]);
-        // $request->session()->put('sqd2', $request->sqd2);
-        // $request->session()->put('sqd2ChosenRating', $request->input('sqd2'));
-
         $sqd = $this->sqdquestion('sqd3');
         return view('sqd3', compact('sqd'));
     }
@@ -107,9 +99,6 @@ class feedbackClientController extends Controller
 
     public function sqd4(Request $request){
         session(['sqd3' => $request->input('sqd3')]);
-        // $request->session()->put('sqd3', $request->sqd3);
-        // $request->session()->put('sqd3ChosenRating', $request->input('sqd3'));
-
         $sqd = $this->sqdquestion('sqd4');
         return view('sqd4', compact('sqd'));
     }
@@ -121,9 +110,6 @@ class feedbackClientController extends Controller
 
     public function sqd5(Request $request){
         session(['sqd4' => $request->input('sqd4')]);
-        // $request->session()->put('sqd4', $request->sqd4);
-        // $request->session()->put('sqd4ChosenRating', $request->input('sqd4'));
-
         $sqd = $this->sqdquestion('sqd5');
         return view('sqd5', compact('sqd'));
     }
@@ -135,9 +121,6 @@ class feedbackClientController extends Controller
 
     public function sqd6(Request $request){
         session(['sqd5' => $request->input('sqd5')]);
-        // $request->session()->put('sqd5', $request->sqd5);
-        // $request->session()->put('sqd5ChosenRating', $request->input('sqd5'));
-
         $sqd = $this->sqdquestion('sqd6');
         return view('sqd6', compact('sqd'));
     }
@@ -149,9 +132,6 @@ class feedbackClientController extends Controller
 
     public function sqd7(Request $request){
         session(['sqd6' => $request->input('sqd6')]);
-        // $request->session()->put('sqd6', $request->sqd6);
-        // $request->session()->put('sqd6ChosenRating', $request->input('sqd6'));
-
         $sqd = $this->sqdquestion('sqd7');
         return view('sqd7', compact('sqd'));
     }
@@ -163,9 +143,6 @@ class feedbackClientController extends Controller
 
     public function sqd8(Request $request){
         session(['sqd7' => $request->input('sqd7')]);
-        // $request->session()->put('sqd7', $request->sqd7);
-        // $request->session()->put('sqd7ChosenRating', $request->input('sqd7'));
-
         $sqd = $this->sqdquestion('sqd8');
         return view('sqd8', compact('sqd'));
     }
@@ -177,9 +154,6 @@ class feedbackClientController extends Controller
 
     public function suggestion (Request $request){
         session(['sqd8' => $request->input('sqd8')]);
-        // $request->session()->put('sqd8', $request->sqd8);
-        // $request->session()->put('sqd8ChosenRating', $request->input('sqd8'));
-
         return view('suggestion');
     }
 
@@ -193,10 +167,6 @@ class feedbackClientController extends Controller
         $cc = DB::table('tbl_cc_question')->orderBy('id', 'ASC')->get();
         $sqd = DB::table('tbl_sqd_question')->orderBy('id', 'ASC')->get();
         return view('confirmation', compact('cc', 'sqd'));
-    }
-
-    public function thankyou(){
-        return view('thankyou');
     }
 
     private function ccquestion($question_no){
@@ -258,8 +228,7 @@ class feedbackClientController extends Controller
 
         }
         catch(\Exception $e){
-
+            return $e;
         }
-        return session('clientNumber');
     }
 }

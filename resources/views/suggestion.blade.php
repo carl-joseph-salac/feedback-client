@@ -12,7 +12,8 @@
                         <div class="mb-3">
                             <label for="exampleFormControlTextarea1" class="form-label my-3">Suggestions on how we can further
                                 improve our services (optional):</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Input your suggestion here" name="suggestion">{{ session('suggestion') }}</textarea>
+                            <textarea class="form-control" id="formControlTextarea" rows="3" placeholder="Input your suggestion here"
+                                name="suggestion">{{ session('suggestion') }}</textarea>
                         </div>
                         <div class="container text-center d-flex justify-content-center my-3">
                             <a href="{{ route('sqd8Star') }}"
@@ -26,3 +27,4 @@
         </div>
     </div>
 @endsection
+

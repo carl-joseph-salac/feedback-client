@@ -7,7 +7,7 @@
 
     // Function to enable or disable the next button based on checkbox status by adding/removing disabled attribute
     function checkSubmitEnabled() {
-        const checkboxes = document.querySelectorAll('.checkboxes');
+        const checkboxes = document.querySelectorAll('.radios');
         const submitButton = document.getElementById('next');
         let isChecked = false;
 
@@ -27,7 +27,7 @@
     checkSubmitEnabled();
 
     // Add event listener to each checkbox
-    const checkboxes = document.querySelectorAll('.checkboxes');
+    const checkboxes = document.querySelectorAll('.radios');
     checkboxes.forEach(checkbox => {
         checkbox.addEventListener('change', () => {
             checkSubmitEnabled();

@@ -8,7 +8,7 @@
     <div class="card rounded-0">
         @include('layout.feedbackHeader')
         <div class="container mb-3 mt-0">
-            <div class="container border">
+            <div class="container rounded border">
                 <div class="px-4">
                     @include('layout.sqdInstruction')
                     <form action="{{ route('sqd6') }}" method="post">

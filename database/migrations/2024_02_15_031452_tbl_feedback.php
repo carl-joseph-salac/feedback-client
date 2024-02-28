@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('tbl_feedback', function (Blueprint $table) {
             $table->id();
-            $table->string('purpose');
             $table->string('clientNumber');
             $table->string('feedbackNumber');
             $table->string('cc1');
