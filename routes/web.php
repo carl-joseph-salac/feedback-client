@@ -30,11 +30,11 @@ Route::controller(feedbackClientController::class)->group(function () {
     Route::get('/sqd2Star', 'sqd2Star')->name('sqd2Star');
     Route::post('/sqd3', 'sqd3')->name('sqd3');
     Route::get('/sqd3Star', 'sqd3Star')->name('sqd3Star');
-    Route::post('/sqd4', 'sqd4')->name('sqd4');
+    Route::any('/sqd4', 'sqd4')->name('sqd4');
     Route::get('/sqd4Star', 'sqd4Star')->name('sqd4Star');
     Route::post('/sqd5', 'sqd5')->name('sqd5');
     Route::get('/sqd5Star', 'sqd5Star')->name('sqd5Star');
-    Route::post('/sqd6', 'sqd6')->name('sqd6');
+    Route::any('/sqd6', 'sqd6')->name('sqd6');
     Route::get('/sqd6Star', 'sqd6Star')->name('sqd6Star');
     Route::post('/sqd7', 'sqd7')->name('sqd7');
     Route::get('/sqd7Star', 'sqd7Star')->name('sqd7Star');

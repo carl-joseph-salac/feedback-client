@@ -28,7 +28,6 @@ class feedbackClientController extends Controller
 
 
     public function cc2(Request $request){
-        // $request->session()->put('cc1', $request->cc1);
         session(['cc1' => $request->input('cc1')]);
         $cc = $this->ccquestion('cc2');
         return view('cc2', compact('cc'));
@@ -63,9 +62,6 @@ class feedbackClientController extends Controller
 
     public function sqd1(Request $request){
         session(['sqd0' => $request->input('sqd0')]);
-        // $request->session()->put('sqd0', $request->sqd0);
-        // $request->session()->put('sqd0ChosenRating', $request->input('sqd0'));
-
         $sqd = $this->sqdquestion('sqd1');
         return view('sqd1', compact('sqd'));
     }
@@ -110,17 +106,35 @@ class feedbackClientController extends Controller
 
     public function sqd5(Request $request){
         session(['sqd4' => $request->input('sqd4')]);
-        $sqd = $this->sqdquestion('sqd5');
-        return view('sqd5', compact('sqd'));
+        $client = DB::table('tbl_clientLogs')->where('id', session('clientNumber'))->first();
+        if($client->officeConcerned == 'Cashier'){
+            $sqd = $this->sqdquestion('sqd5');
+            return view('sqd5', compact('sqd'));
+        }
+        else{
+            return redirect('sqd6');
+        }
     }
 
     public function sqd5Star(Request $request){
-        $sqd = $this->sqdquestion('sqd5');
-        return view('sqd5', compact('sqd'));
+        $client = DB::table('tbl_clientLogs')->where('id', session('clientNumber'))->first();
+        if($client->officeConcerned == 'Cashier'){
+            $sqd = $this->sqdquestion('sqd5');
+            return view('sqd5', compact('sqd'));
+        }
+        else{
+            return redirect('sqd4Star');
+        }
     }
 
     public function sqd6(Request $request){
-        session(['sqd5' => $request->input('sqd5')]);
+        $client = DB::table('tbl_clientLogs')->where('id', session('clientNumber'))->first();
+        if($client->officeConcerned == 'Cashier'){
+            session(['sqd5' => $request->input('sqd5')]);
+        }
+        else{
+            session(['sqd5' => 0]);
+        }
         $sqd = $this->sqdquestion('sqd6');
         return view('sqd6', compact('sqd'));
     }
@@ -205,7 +219,7 @@ class feedbackClientController extends Controller
         try{
             DB::table('tbl_feedback')
             ->insert([
-                'purpose' => 'acv',
+                // 'purpose' => 'acv',
                 'clientNumber' => session('clientNumber'),
                 'feedbackNumber' => $feedBackNumber,
                 'cc1' => session('cc1'),
@@ -223,7 +237,7 @@ class feedbackClientController extends Controller
                 'feedback_date' => date('Y-m-d H:i:s'),
                 'suggestion' =>session('suggestion'),
             ]);
-
+            session()->flush();
             return view('thankyou');
 
         }

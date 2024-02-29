@@ -17,7 +17,7 @@
                     <span class="fa fa-circle"></span>
                     <span class="break-line"></span>
                     <span class="step-title">TERMS AND CONDITIONS</span>
-                    <a href="http://localhost:8000/feedback-client/public/feedback?logsNumber={{uniqid()}}">Give Feedback</a>
+                    {{-- <a href="http://localhost:8000/feedback-client/public/feedback?logsNumber={{uniqid()}}">Give Feedback</a> --}}
                 </h6>
             </div>
             <div class="col-md-3 col-4 step-box">
@@ -47,15 +47,14 @@
                         I have read and agree to the following Terms and Conditions
                     </label>
                 </div>
-                <div class="row justify-content-center">
+                <div class="row justify-content-center px-5">
+                    <ul type="1" class="pl-3 text-muted mb-5 mx-md-5">
+                        <li>This Client Satisfaction Measurement (CSM) tracks the customer experience of government offices. Your feedback on your recently concluded transaction will help this office provide a better service. Personal information shared will be kept confidential and you  always have the option to not answer this form.
+                        </li>
+                    </ul>
                     <div class="col-lg-3 col-md-1 col-0"></div>
-                    <div class="col-lg-9 col-md-11 col-12 list text-left">
-                        <ol type="1" class="pl-3 text-muted mb-5">
-                            <li>Lorem ipsum dolor sit amet</li>
-                            <li>Consectuer adipiscing eut, sed diamnanummy</li>
-                            <li>Lorem ipsum dolor sit amet</li>
-                            <li>Consectuer adipiscing eut, sed diamnanummy</li>
-                        </ol>
+                    <div class="col-lg-9 col-md-11 col-12 list ">
+
                     </div>
                 </div>
                 <button type="submit" disabled id="start" class="btn btn-success rounded-1 mb-5">

@@ -18,6 +18,7 @@
     .checkboxes input[type="radio"] {
       display: none;
     }
+
     .checkboxes label {
       display: inline-block;
       width: 20px;
@@ -28,6 +29,7 @@
       cursor: pointer;
       margin: 0;
     }
+    
     .checkboxes input[type="radio"]:checked + label::before {
       content: "\2713";
       display: block;
