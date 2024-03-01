@@ -10,8 +10,9 @@
                         @csrf
                         @method('post')
                         <div class="mb-3">
-                            <label for="exampleFormControlTextarea1" class="form-label my-3">Suggestions on how we can further
-                                improve our services (optional):</label>
+                            <label for="exampleFormControlTextarea1" class="form-label my-3">
+                                Suggestions on how we can further improve our services (optional):
+                            </label>
                             <textarea class="form-control" id="formControlTextarea" rows="3" placeholder="Input your suggestion here"
                                 name="suggestion">{{ session('suggestion') }}</textarea>
                         </div>

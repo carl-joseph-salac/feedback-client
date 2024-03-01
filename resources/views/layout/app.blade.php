@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Feedback Client</title>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
+    <link rel="stylesheet" href="{{ asset('resources/bootstrap4.3.1.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('resources/font-awesome4.0.3.css') }}">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
     @yield('additionalStyle')
 </head>
@@ -20,13 +20,13 @@
             </div>
         </div>
     </div>
-
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="{{ asset('resources/bootstrap4.3.1.min.js') }}"></script>
+    <script src="{{ asset('resources/jquery3.2.1.min.js') }}"></script>
+    <script src="{{ asset('resources/jquery3.6.0.min.js') }}"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
     @yield('additionalScript')
 </body>
 
 </html>
+
 {{-- <script src="{{ url('js/script.js') }}"></script> --}}

@@ -1,4 +1,5 @@
 @extends('layout.app')
+
 @section('section')
 <div class="card b-0 rounded-0">
     <div class="row justify-content-center mx-auto step-container">
@@ -30,7 +31,7 @@
             <div class="">
                 <img src="{{ asset('images/check-feedback.gif')}}" class="fit-image mb-2" style="width: 200px;">
                 <br>
-                <a href="http://20.20.22.123/client-log-master/public/clientLogs/applicationForm"
+                <a href="http://20.20.23.72/client-log-master/public/clientLogs/applicationForm"
                     class="btn btn-primary btn-lg rounded-1" type="button" data-toggle="tooltip" data-placement="top" title="Edit">
                     <i class="fa fa-location-arrow mr-1"></i>
                     Go to Application Form

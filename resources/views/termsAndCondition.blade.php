@@ -49,7 +49,8 @@
                 </div>
                 <div class="row justify-content-center px-5">
                     <ul type="1" class="pl-3 text-muted mb-5 mx-md-5">
-                        <li>This Client Satisfaction Measurement (CSM) tracks the customer experience of government offices. Your feedback on your recently concluded transaction will help this office provide a better service. Personal information shared will be kept confidential and you  always have the option to not answer this form.
+                        <li>
+                            This Client Satisfaction Measurement (CSM) tracks the customer experience of government offices. Your feedback on your recently concluded transaction will help this office provide a better service. Personal information shared will be kept confidential and you  always have the option to not answer this form.
                         </li>
                     </ul>
                     <div class="col-lg-3 col-md-1 col-0"></div>

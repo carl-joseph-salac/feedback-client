@@ -23,7 +23,6 @@
                 const isChecked = Array.from(radioButtons).some(function(radio) {
                     return radio.checked;
                 });
-
                 nextButton.disabled = !isChecked;
             });
         });

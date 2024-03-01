@@ -106,8 +106,14 @@ class feedbackClientController extends Controller
 
     public function sqd5(Request $request){
         session(['sqd4' => $request->input('sqd4')]);
-        $client = DB::table('tbl_clientLogs')->where('id', session('clientNumber'))->first();
-        if($client->officeConcerned == 'Cashier'){
+        $client = DB::table('tbl_client_office_concerned')
+        ->where([
+            ['logsNumber', session('clientNumber')],
+            ['officeName', 'Cashier']
+            ])
+        ->first();
+
+        if($client){
             $sqd = $this->sqdquestion('sqd5');
             return view('sqd5', compact('sqd'));
         }
@@ -117,8 +123,14 @@ class feedbackClientController extends Controller
     }
 
     public function sqd5Star(Request $request){
-        $client = DB::table('tbl_clientLogs')->where('id', session('clientNumber'))->first();
-        if($client->officeConcerned == 'Cashier'){
+        $client = DB::table('tbl_client_office_concerned')
+        ->where([
+            ['logsNumber', session('clientNumber')],
+            ['officeName', 'Cashier']
+            ])
+        ->first();
+
+        if($client){
             $sqd = $this->sqdquestion('sqd5');
             return view('sqd5', compact('sqd'));
         }
@@ -128,8 +140,14 @@ class feedbackClientController extends Controller
     }
 
     public function sqd6(Request $request){
-        $client = DB::table('tbl_clientLogs')->where('id', session('clientNumber'))->first();
-        if($client->officeConcerned == 'Cashier'){
+        $client = DB::table('tbl_client_office_concerned')
+        ->where([
+            ['logsNumber', session('clientNumber')],
+            ['officeName', 'Cashier']
+            ])
+        ->first();
+
+        if($client){
             session(['sqd5' => $request->input('sqd5')]);
         }
         else{
