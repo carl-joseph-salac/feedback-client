@@ -43,5 +43,6 @@ Route::controller(feedbackClientController::class)->group(function () {
     Route::post('/suggestion', 'suggestion')->name('suggestion');
     Route::get('/suggestion/answered', 'suggestionAnswered')->name('suggestionAnswered');
     Route::post('/confirmation', 'confirmation')->name('confirmation');
+    Route::post('/cc1/edit', 'cc1Edited')->name('cc1Edited');
     Route::post('/submitFeedback', 'saveFeedback')->name('submitFeedback');
 });

@@ -57,8 +57,17 @@
                                         <td><strong>{{ strtoupper($question->question_no) }}</strong> </td>
                                         <td>{{ $question->question }}</td>
                                         <td rowspan="2">
-                                            <a href="{{ route($question->question_no . 'Checked') }}" class="btn btn-success btn-sm rounded-1"
-                                                type="button" data-toggle="tooltip" data-placement="top" title="Edit">
+                                            <a href="{{ route($question->question_no . 'Checked',
+                                                [
+                                                    'buttonLabel' => session('buttonLabel'),
+                                                    'routeName' => session('routeName'),
+                                                    'cc1' => session('cc1')
+                                                ])
+                                            }}"
+                                                class="btn btn-success btn-sm rounded-1"
+                                                type="button" data-toggle="tooltip"
+                                                data-placement="top"
+                                                title="Edit">
                                                 <i class="fa fa-edit mr-1"></i>
                                                 Edit
                                             </a>

@@ -29,6 +29,8 @@ class feedbackClientController extends Controller
 
     public function cc2(Request $request){
         session(['cc1' => $request->input('cc1')]);
+        // session(['buttonLabel' => 'Next']);
+        // session(['routeName' => 'cc2']);
         $cc = $this->ccquestion('cc2');
         return view('cc2', compact('cc'));
     }
@@ -194,8 +196,16 @@ class feedbackClientController extends Controller
     }
 
     public function confirmation(Request $request){
-        $request->session()->put('suggestion', $request->suggestion);
+        session(['suggestion' => $request->input('suggestion')]);
+        session(['buttonLabel' => 'Confirm']);
+        session(['routeName' => 'cc1Edited']);
+        $cc = DB::table('tbl_cc_question')->orderBy('id', 'ASC')->get();
+        $sqd = DB::table('tbl_sqd_question')->orderBy('id', 'ASC')->get();
+        return view('confirmation', compact('cc', 'sqd'));
+    }
 
+    public function cc1Edited(Request $request){
+        session(['cc1' => $request->input('cc1')]);
         $cc = DB::table('tbl_cc_question')->orderBy('id', 'ASC')->get();
         $sqd = DB::table('tbl_sqd_question')->orderBy('id', 'ASC')->get();
         return view('confirmation', compact('cc', 'sqd'));

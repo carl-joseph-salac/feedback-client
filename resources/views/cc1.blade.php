@@ -12,7 +12,7 @@
                 {{-- <h4 class="heading mb-2 text-center">Feedback</h4> --}}
                 <div class="container px-4 justify-content-center">
                     @include('layout.ccInstruction')
-                    <form action="{{ route('cc2') }}" method="post" class="mt-2">
+                    <form action="{{ route(session('routeName', 'cc2')) }}" method="post" class="mt-2">
                         @csrf
                         @method('post')
                         <table class="mx-auto">
@@ -56,10 +56,14 @@
                             </tr>
                         </table>
                         <div class="container text-center d-flex justify-content-center my-3">
-                            <a href="{{ route('termsAndCondition') }}"
-                                class="text-center btn btn-success rounded-1 prev mr-2">Back</a>
-                            <input class="text-center btn btn-success rounded-1 prev mr-2" type="submit" value="Next"
-                                id="next">
+                            @if (!session('routeName'))
+                                <a href="{{ route('termsAndCondition') }}"
+                                    class="text-center btn btn-success rounded-1 prev mr-2" id="back">
+                                    Back
+                                </a>
+                            @endif
+                            <input class="text-center btn btn-success rounded-1 prev mr-2" type="submit"
+                                value="{{ session('buttonLabel', 'Next') }}" id="next">
                         </div>
                     </form>
                 </div>

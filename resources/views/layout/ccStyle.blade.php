@@ -8,8 +8,12 @@
     }
 
     #next {
-        width: 63px;
+        width: 85px;
     }
+
+    /* #back {
+        width: 85px;
+    } */
 
     .checkboxes {
         width: 20px;
@@ -29,7 +33,7 @@
       cursor: pointer;
       margin: 0;
     }
-    
+
     .checkboxes input[type="radio"]:checked + label::before {
       content: "\2713";
       display: block;
