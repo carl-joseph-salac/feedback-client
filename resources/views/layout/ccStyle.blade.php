@@ -7,13 +7,9 @@
         cursor: pointer;
     }
 
-    #next {
+    .btn {
         width: 85px;
     }
-
-    /* #back {
-        width: 85px;
-    } */
 
     .checkboxes {
         width: 20px;

@@ -12,7 +12,7 @@
                 {{-- <h4 class="heading mb-2 text-center">Feedback</h4> --}}
                 <div class="container px-4 justify-content-center">
                     @include('layout.ccInstruction')
-                    <form action="{{ route(session('routeName', 'cc2')) }}" method="post" class="mt-2">
+                    <form action="{{ route(session('cc1Edit', 'cc2')) }}" method="post" class="mt-2">
                         @csrf
                         @method('post')
                         <table class="mx-auto">
@@ -56,7 +56,7 @@
                             </tr>
                         </table>
                         <div class="container text-center d-flex justify-content-center my-3">
-                            @if (!session('routeName'))
+                            @if (!session('cc1Edit'))
                                 <a href="{{ route('termsAndCondition') }}"
                                     class="text-center btn btn-success rounded-1 prev mr-2" id="back">
                                     Back

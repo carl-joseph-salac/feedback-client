@@ -58,7 +58,7 @@
         color: #2ddc76;
     }
 
-    #nextsqd {
-        width: 63px;
+    .btn {
+        width: 85px;
     }
 </style>

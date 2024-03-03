@@ -2,15 +2,15 @@
 
 @section('additionalStyle')
     <style>
-        #confirm {
-            width: 75px;
-        }
-
         table tr td {
             padding: 5px;
         }
 
-        .btn{
+        .buttonss{
+            width: 85px;
+        }
+
+        .btn-secondary {
             width: 65px;
         }
     </style>
@@ -60,8 +60,12 @@
                                             <a href="{{ route($question->question_no . 'Checked',
                                                 [
                                                     'buttonLabel' => session('buttonLabel'),
-                                                    'routeName' => session('routeName'),
-                                                    'cc1' => session('cc1')
+                                                    'cc1Edit' => session('cc1Edit'),
+                                                    'cc2Edit' => session('cc2Edit'),
+                                                    'cc3Edit' => session('cc3Edit'),
+                                                    'cc1' => session('cc1'),
+                                                    'cc2' => session('cc2'),
+                                                    'cc3' => session('cc3'),
                                                 ])
                                             }}"
                                                 class="btn btn-success btn-sm rounded-1"
@@ -143,8 +147,8 @@
                         </div>
                         <div class="container text-center d-flex justify-content-center my-3">
                             <a href="{{ route('suggestionAnswered') }}"
-                                class="text-center btn btn-success rounded-1 prev mr-2">Back</a>
-                            <input class="text-center btn btn-success btn-sm rounded-1 prev mr-2" type="submit"
+                                class="text-center btn btn-success rounded-1 prev mr-2 buttons">Back</a>
+                            <input class="text-center btn btn-success  rounded-1 prev mr-2 buttons" type="submit"
                                 value="Confirm" id="confirm">
                         </div>
                     </form>

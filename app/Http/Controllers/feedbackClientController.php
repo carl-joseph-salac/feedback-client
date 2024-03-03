@@ -29,8 +29,6 @@ class feedbackClientController extends Controller
 
     public function cc2(Request $request){
         session(['cc1' => $request->input('cc1')]);
-        // session(['buttonLabel' => 'Next']);
-        // session(['routeName' => 'cc2']);
         $cc = $this->ccquestion('cc2');
         return view('cc2', compact('cc'));
     }
@@ -198,14 +196,33 @@ class feedbackClientController extends Controller
     public function confirmation(Request $request){
         session(['suggestion' => $request->input('suggestion')]);
         session(['buttonLabel' => 'Confirm']);
-        session(['routeName' => 'cc1Edited']);
+        session(['cc1Edit' => 'cc1Edit']);
+        session(['cc2Edit' => 'cc2Edit']);
+        session(['cc3Edit' => 'cc3Edit']);
         $cc = DB::table('tbl_cc_question')->orderBy('id', 'ASC')->get();
         $sqd = DB::table('tbl_sqd_question')->orderBy('id', 'ASC')->get();
         return view('confirmation', compact('cc', 'sqd'));
     }
 
-    public function cc1Edited(Request $request){
+    public function cc1Edit(Request $request){
         session(['cc1' => $request->input('cc1')]);
+        return redirect()->route('edit');
+    }
+
+    public function cc2Edit(Request $request){
+        session(['cc2' => $request->input('cc2')]);
+        return redirect()->route('edit');
+    }
+
+    public function cc3Edit(Request $request){
+        session(['cc3' => $request->input('cc3')]);
+        return redirect()->route('edit');
+    }
+
+    public function edit(Request $request){
+        session('cc1');
+        session('cc2');
+        session('cc3');
         $cc = DB::table('tbl_cc_question')->orderBy('id', 'ASC')->get();
         $sqd = DB::table('tbl_sqd_question')->orderBy('id', 'ASC')->get();
         return view('confirmation', compact('cc', 'sqd'));
@@ -247,7 +264,6 @@ class feedbackClientController extends Controller
         try{
             DB::table('tbl_feedback')
             ->insert([
-                // 'purpose' => 'acv',
                 'clientNumber' => session('clientNumber'),
                 'feedbackNumber' => $feedBackNumber,
                 'cc1' => session('cc1'),
