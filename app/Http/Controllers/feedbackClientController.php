@@ -10,7 +10,6 @@ class feedbackClientController extends Controller
     public function termsAndCondition(Request $request){
         $customCheck = session('customCheck');
         $request->session()->put('clientNumber', $request->get('logsNumber'));
-        //session()->flush();
         return view('termsAndCondition', compact('customCheck'));
     }
 
@@ -195,10 +194,20 @@ class feedbackClientController extends Controller
 
     public function confirmation(Request $request){
         session(['suggestion' => $request->input('suggestion')]);
-        session(['buttonLabel' => 'Confirm']);
-        session(['cc1Edit' => 'cc1Edit']);
-        session(['cc2Edit' => 'cc2Edit']);
-        session(['cc3Edit' => 'cc3Edit']);
+        session(['Confirm' => 'Confirm']);
+
+        /* creates session variables ('cc1Edit', 'cc2Edit', 'cc3Edit') to be used as route names*/
+        for($i=1; $i<=3; $i++){
+            $ccEdit = 'cc' . $i . 'Edit';
+            session([$ccEdit => $ccEdit]);
+        }
+
+        /* creates session variables ('sqd0Edit', to 'sqd8Edit') to be used as route names*/
+        for($i=0; $i<=8; $i++){
+            $sqdEdit = 'sqd' . $i . 'Edit';
+            session([$sqdEdit => $sqdEdit]);
+        }
+
         $cc = DB::table('tbl_cc_question')->orderBy('id', 'ASC')->get();
         $sqd = DB::table('tbl_sqd_question')->orderBy('id', 'ASC')->get();
         return view('confirmation', compact('cc', 'sqd'));
@@ -219,10 +228,61 @@ class feedbackClientController extends Controller
         return redirect()->route('edit');
     }
 
+    public function sqd0Edit(Request $request){
+        session(['sqd0' => $request->input('sqd0')]);
+        return redirect()->route('edit');
+    }
+
+    public function sqd1Edit(Request $request){
+        session(['sqd1' => $request->input('sqd1')]);
+        return redirect()->route('edit');
+    }
+    public function sqd2Edit(Request $request){
+        session(['sqd2' => $request->input('sqd2')]);
+        return redirect()->route('edit');
+    }
+
+    public function sqd3Edit(Request $request){
+        session(['sqd3' => $request->input('sqd3')]);
+        return redirect()->route('edit');
+    }
+
+    public function sqd4Edit(Request $request){
+        session(['sqd4' => $request->input('sqd4')]);
+        return redirect()->route('edit');
+    }
+
+    public function sqd5Edit(Request $request){
+        session(['sqd5' => $request->input('sqd5')]);
+        return redirect()->route('edit');
+    }
+
+    public function sqd6Edit(Request $request){
+        session(['sqd6' => $request->input('sqd6')]);
+        return redirect()->route('edit');
+    }
+
+    public function sqd7Edit(Request $request){
+        session(['sqd7' => $request->input('sqd7')]);
+        return redirect()->route('edit');
+    }
+
+    public function sqd8Edit(Request $request){
+        session(['sqd8' => $request->input('sqd8')]);
+        return redirect()->route('edit');
+    }
+
     public function edit(Request $request){
-        session('cc1');
-        session('cc2');
-        session('cc3');
+        /* retrieves session variables ('cc1', 'cc2', 'cc3') from ccEdit methods, to be displayed in confirmation view */
+        for($i=1; $i<=3; $i++){
+            session('cc' . $i);
+        }
+
+        /* retrieves session variables ('sqd0', to 'sqd8') from sqdEdit methods, to be displayed in confirmation view */
+        for($i=0; $i<=8; $i++){
+            session('sqd' . $i);
+        }
+
         $cc = DB::table('tbl_cc_question')->orderBy('id', 'ASC')->get();
         $sqd = DB::table('tbl_sqd_question')->orderBy('id', 'ASC')->get();
         return view('confirmation', compact('cc', 'sqd'));

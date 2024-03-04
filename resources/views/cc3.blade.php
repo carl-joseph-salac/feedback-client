@@ -58,13 +58,13 @@
                     </table>
                     <div class="container text-center d-flex justify-content-center my-3">
                         @if (!session('cc3Edit'))
-                                <a href="{{ route('termsAndCondition') }}"
+                                <a href="{{ route('cc2Checked') }}"
                                     class="text-center btn btn-success rounded-1 prev mr-2" id="back">
                                     Back
                                 </a>
                             @endif
                             <input class="text-center btn btn-success rounded-1 prev mr-2" type="submit"
-                                value="{{ session('buttonLabel', 'Next') }}" id="next">
+                                value="{{ session('Confirm', 'Next') }}" id="next">
                     </div>
                 </form>
             </div>

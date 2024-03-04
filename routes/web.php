@@ -46,6 +46,15 @@ Route::controller(feedbackClientController::class)->group(function () {
     Route::post('/cc1Edit', 'cc1Edit')->name('cc1Edit');
     Route::post('/cc2Edit', 'cc2Edit')->name('cc2Edit');
     Route::post('/cc3Edit', 'cc3Edit')->name('cc3Edit');
+    Route::post('/sqd0Edit', 'sqd0Edit')->name('sqd0Edit');
+    Route::post('/sqd1Edit', 'sqd1Edit')->name('sqd1Edit');
+    Route::post('/sqd2Edit', 'sqd2Edit')->name('sqd2Edit');
+    Route::post('/sqd3Edit', 'sqd3Edit')->name('sqd3Edit');
+    Route::post('/sqd4Edit', 'sqd4Edit')->name('sqd4Edit');
+    Route::post('/sqd5Edit', 'sqd5Edit')->name('sqd5Edit');
+    Route::post('/sqd6Edit', 'sqd6Edit')->name('sqd6Edit');
+    Route::post('/sqd7Edit', 'sqd7Edit')->name('sqd7Edit');
+    Route::post('/sqd8Edit', 'sqd8Edit')->name('sqd8Edit');
     Route::get('/edit', 'edit')->name('edit');
     Route::post('/submitFeedback', 'saveFeedback')->name('submitFeedback');
 });

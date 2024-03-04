@@ -11,7 +11,7 @@
             <div class="container rounded border">
                 <div class="px-4">
                     @include('layout.sqdInstruction')
-                    <form action="{{ route('suggestion') }}" method="post">
+                    <form action="{{ route(session('sqd8Edit', 'suggestion')) }}" method="post">
                         @csrf
                         @method('post')
                         <p>
@@ -46,8 +46,14 @@
                             </div>
                         </div>
                         <div class="container text-center d-flex justify-content-center my-3">
-                            <a href="{{ route('sqd7Star') }}" class="text-center btn btn-success rounded-1 prev mr-2">Back</a>
-                            <input class="text-center btn btn-success rounded-1 prev mr-2" type="submit" value="Next" id="nextsqd">
+                            @if (!session('sqd8Edit'))
+                                <a href="{{ route('sqd7Star') }}"
+                                    class="text-center btn btn-success rounded-1 prev mr-2" id="back">
+                                    Back
+                                </a>
+                            @endif
+                            <input class="text-center btn btn-success rounded-1 prev mr-2" type="submit"
+                                value="{{ session('Confirm', 'Next') }}" id="nextsqd">
                         </div>
                     </form>
                 </div>

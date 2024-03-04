@@ -10,9 +10,9 @@
 
 
 @section('section')
-    <div class="card b-0 rounded-0 show">
-        <div class="row justify-content-center mx-auto step-container">
-            <div class="col-md-3 col-4 step-box active">
+    <div class="card b-0 rounded-3 show">
+        <div class="row justify-content-center mx-auto step-container text-center">
+            <div class="col-4 step-box active">
                 <h6 class="step-title-0">
                     <span class="fa fa-circle"></span>
                     <span class="break-line"></span>
@@ -20,14 +20,14 @@
                     {{-- <a href="http://localhost:8000/feedback-client/public/feedback?logsNumber={{uniqid()}}">Give Feedback</a> --}}
                 </h6>
             </div>
-            <div class="col-md-3 col-4 step-box">
+            <div class="col-4 step-box">
                 <h6 class="step-title-0">
                     <span class="fa fa-circle"></span>
                     <span class="break-line"></span>
                     <span class="step-title">FEEDBACK</span>
                 </h6>
             </div>
-            <div class="col-md-3 col-4 step-box">
+            <div class="col-4 step-box">
                 <h6 class="step-title-0">
                     <span class="fa fa-circle"></span>
                     <span class="break-line"></span>
@@ -48,9 +48,12 @@
                     </label>
                 </div>
                 <div class="row justify-content-center px-5">
-                    <ul type="1" class="pl-3 text-muted mb-5 mx-md-5">
+                    <ul type="1" class="pl-3 text-muted mb-3 mx-md-5">
                         <li>
-                            This Client Satisfaction Measurement (CSM) tracks the customer experience of government offices. Your feedback on your recently concluded transaction will help this office provide a better service. Personal information shared will be kept confidential and you  always have the option to not answer this form.
+                            This Client Satisfaction Measurement (CSM) tracks the customer experience of government offices.
+                            Your feedback on your recently concluded transaction will help this office provide a better
+                            service. Personal information shared will be kept confidential and you always have the option to
+                            not answer this form.
                         </li>
                     </ul>
                     <div class="col-lg-3 col-md-1 col-0"></div>
@@ -61,6 +64,14 @@
                 <button type="submit" disabled id="start" class="btn btn-success rounded-1 mb-5">
                     START
                 </button>
+            </div>
+            <div class="ml-3">
+                <a href="http://20.20.23.72/client-log-master/public/clientLogs/applicationForm"
+                    class="btn btn-danger btn-md rounded-1" type="button" data-toggle="tooltip" data-placement="top"
+                    title="Edit">
+                    <i class="fa fa-location-arrow mr-1"></i>
+                    Go to Application Form
+                </a>
             </div>
         </form>
     </div>
