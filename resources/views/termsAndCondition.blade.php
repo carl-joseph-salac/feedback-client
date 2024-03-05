@@ -10,7 +10,7 @@
 
 
 @section('section')
-    <div class="card b-0 rounded-3 show">
+    <div class="card b-0 rounded-3 show pb-3">
         <div class="row justify-content-center mx-auto step-container text-center">
             <div class="col-4 step-box active">
                 <h6 class="step-title-0">
