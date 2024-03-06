@@ -74,4 +74,41 @@
 
 @section('additionalScript')
     @include('layout.ccScript')
+    @if (session('cc1Edit'))
+        <script>
+            if ('{{ session('cc1') }}' == '{{ session('cc1Choices4') }}')
+                $(document).ready(function() {
+                    $('.radios').change(function() {
+                        if (this.id == 'choices4') {
+                            $('#next').val('{{ session('Confirm') }}');
+                            $('form').attr('action', '{{ route(session('cc1Edit')) }}');
+                        } else {
+                            if (!'{{ session('cc2') }}') {
+                                $('#next').val('Next');
+                                $('form').attr('action', '{{ route('cc2') }}');
+                            }
+                        }
+                    });
+                });
+        </script>
+        {{-- <script>
+            if ('{{ session('cc1Edit') }}' && '{{ session('cc1') }}' ==
+                'I do not know what a CC is and I did not see one in this office.')
+                $(document).ready(function() {
+                    $('.radios').change(function() {
+                        if (this.id == 'choices4') {
+                            $('#next').val('{{ session('Confirm') }}');
+                            if ('{{ session('cc1Edit') }}') {
+                                $('form').attr('action', '{{ route(session('cc1Edit')) }}');
+                            }
+                        } else {
+                            if (!'{{ session('cc2') }}'){
+                                $('#next').val('Next');
+                                $('form').attr('action', '{{ route('cc2') }}');
+                            }
+                        }
+                    });
+                });
+        </script> --}}
+    @endif
 @endsection

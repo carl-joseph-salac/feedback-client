@@ -1,5 +1,5 @@
 {{-- If cc1 answer is equal to choices 4, cc2 and cc3 will become automatically not applicable --}}
-@if (session('cc1') == $cc1Choices4)
+@if (session('cc1') == session('cc1Choices4'))
     @foreach ($cc as $question)
         @if ($question->question_no == 'cc1')
             <tr>

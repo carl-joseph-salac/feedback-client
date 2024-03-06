@@ -27,7 +27,6 @@
             background-color: #2835f0;
             background-image: linear-gradient(to bottom, rgba(19, 44, 237, 0.86), rgb(206, 74, 82));
         }
-
     </style>
 </head>
 
