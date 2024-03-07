@@ -5,11 +5,10 @@
 @endsection
 
 @section('section')
-    <div class="card rounded-0">
+    <div class="card" id="card-carl">
         @include('layout.feedbackHeader')
         <div class="container mb-3 mt-0">
             <div class="container rounded border">
-                {{-- <h4 class="heading mb-2 text-center">Feedback</h4> --}}
                 <div class="container px-4 justify-content-center">
                     @include('layout.ccInstruction')
                     <form action="{{ route(session('cc1Edit', 'cc2')) }}" method="post" class="mt-2">
@@ -74,8 +73,10 @@
 
 @section('additionalScript')
     @include('layout.ccScript')
+    {{-- This code will only run if the user click the edit button of cc1 in confirmation page --}}
     @if (session('cc1Edit'))
         <script>
+            /* If cc1 answer is choices number 4 the button will redirect the user to confirmaton page */
             if ('{{ session('cc1') }}' == '{{ session('cc1Choices4') }}')
                 $(document).ready(function() {
                     $('.radios').change(function() {
@@ -83,7 +84,9 @@
                             $('#next').val('{{ session('Confirm') }}');
                             $('form').attr('action', '{{ route(session('cc1Edit')) }}');
                         } else {
-                            if (!'{{ session('cc2') }}') {
+                            /* This code will only run if the value of cc2 session is equal to 0, which means that cc2 question is not yet answered */
+                            /* The button will redirect the user to cc2 question */
+                            if ('{{ session('cc2') }}' == 0) {
                                 $('#next').val('Next');
                                 $('form').attr('action', '{{ route('cc2') }}');
                             }
@@ -91,24 +94,5 @@
                     });
                 });
         </script>
-        {{-- <script>
-            if ('{{ session('cc1Edit') }}' && '{{ session('cc1') }}' ==
-                'I do not know what a CC is and I did not see one in this office.')
-                $(document).ready(function() {
-                    $('.radios').change(function() {
-                        if (this.id == 'choices4') {
-                            $('#next').val('{{ session('Confirm') }}');
-                            if ('{{ session('cc1Edit') }}') {
-                                $('form').attr('action', '{{ route(session('cc1Edit')) }}');
-                            }
-                        } else {
-                            if (!'{{ session('cc2') }}'){
-                                $('#next').val('Next');
-                                $('form').attr('action', '{{ route('cc2') }}');
-                            }
-                        }
-                    });
-                });
-        </script> --}}
     @endif
 @endsection

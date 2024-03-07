@@ -29,6 +29,8 @@ class feedbackClientController extends Controller
         session(['cc1' => $request->input('cc1')]);
         $cc1Choices4 = DB::table('tbl_cc_question')->where('id', 1)->value('choices4');
         if(session('cc1') == $cc1Choices4){
+            session(['cc2' => 0]);
+            session(['cc3' => 0]);
             return redirect('sqd0');
         }
         else{

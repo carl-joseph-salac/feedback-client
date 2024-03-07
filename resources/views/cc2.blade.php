@@ -87,9 +87,11 @@
 
 @section('additionalScript')
     @include('layout.ccScript')
+    {{-- This code will only run if the user click the edit button of cc2 in confirmation page --}}
     @if (session('cc2Edit'))
         <script>
-            if ('{{ session('cc1') }}' != '{{ session('cc1Choices4') }}' && !'{{ session('cc3') }}')
+            /* If the user answer in cc1 is not choices no.4, and if the value of cc3 session is equal to 0 which means that cc3 quesion is not yet answered, the button will redirect them to cc3 */
+            if ('{{ session('cc1') }}' != '{{ session('cc1Choices4') }}' && '{{ session('cc3') }}' == 0)
                 $(document).ready(function() {
                     $('#next').val('Next');
                     $('form').attr('action', '{{ route('cc3') }}');
@@ -98,11 +100,3 @@
     @endif
 @endsection
 
-{{-- <script>
-        if('{{session('cc2Edit')}}' && '{{session('cc1')}}' != '{{session('cc1Choices4')}}'
-            && !'{{session('cc3')}}')
-            $(document).ready(function() {
-                $('#next').val('Next');
-                $('form').attr('action', '{{ route('cc3') }}');
-            });
-    </script> --}}

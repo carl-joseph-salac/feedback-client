@@ -8,16 +8,14 @@
     </style>
 @endsection
 
-
 @section('section')
-    <div class="card b-0 rounded-3 show pb-3">
-        <div class="row justify-content-center mx-auto step-container text-center">
+    <div class="card b-0 show pb-3 rounded-4" id="card-carl">
+        <div class="row justify-content-center mx-auto step-container text-center mb-4">
             <div class="col-4 step-box active">
                 <h6 class="step-title-0">
                     <span class="fa fa-circle"></span>
                     <span class="break-line"></span>
-                    <span class="step-title">TERMS AND CONDITIONS</span>
-                    {{-- <a href="http://localhost:8000/feedback-client/public/feedback?logsNumber={{uniqid()}}">Give Feedback</a> --}}
+                    <span class="step-title text-white">TERMS AND CONDITIONS</span>
                 </h6>
             </div>
             <div class="col-4 step-box">
@@ -43,31 +41,29 @@
                 <div class="custom-control custom-checkbox mb-4">
                     <input id="customCheck" name="customCheck" type="checkbox"
                         class="custom-control-input hover-cursor-pointer" {{ $customCheck ? 'checked' : '' }}>
-                    <label id="customLabel" for="customCheck" class="custom-control-label">
+                    <label id="customLabel" for="customCheck" class="custom-control-label" style="font-size: 16px">
                         I have read and agree to the following Terms and Conditions
                     </label>
                 </div>
-                <div class="row justify-content-center px-5">
-                    <ul type="1" class="pl-3 text-muted mb-3 mx-md-5">
-                        <li>
-                            This Client Satisfaction Measurement (CSM) tracks the customer experience of government offices.
-                            Your feedback on your recently concluded transaction will help this office provide a better
-                            service. Personal information shared will be kept confidential and you always have the option to
-                            not answer this form.
-                        </li>
-                    </ul>
+                <div class="row justify-content-center px-5 mb-4">
+                    <p>
+                        This Client Satisfaction Measurement (CSM) tracks the customer experience of government offices.
+                        Your feedback on your recently concluded transaction will help this office provide a better
+                        service. Personal information shared will be kept confidential and you always have the option to
+                        not answer this form.
+                    </p>
                     <div class="col-lg-3 col-md-1 col-0"></div>
                     <div class="col-lg-9 col-md-11 col-12 list ">
 
                     </div>
                 </div>
-                <button type="submit" disabled id="start" class="btn btn-success rounded-1 mb-5">
+                <button type="submit" disabled id="start" class="btn btn-primary rounded-1 mb-5">
                     START
                 </button>
             </div>
             <div class="ml-3">
                 <a href="http://20.20.23.72/client-log-master/public/clientLogs/applicationForm"
-                    class="btn btn-danger btn-md rounded-1" type="button" data-toggle="tooltip" data-placement="top"
+                    class="btn btn-outline-danger btn-md rounded-1" type="button" data-toggle="tooltip" data-placement="top"
                     title="Edit">
                     <i class="fa fa-location-arrow mr-1"></i>
                     Go to Application Form

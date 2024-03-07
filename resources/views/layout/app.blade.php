@@ -5,33 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Feedback Client</title>
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('css/test.css') }}"> --}}
+    <link rel="stylesheet" href="{{ asset('css/feedback-template.css') }}">
     <link rel="stylesheet" href="{{ asset('resources/bootstrap4.3.1.min.css') }}">
     <link rel="stylesheet" href="{{ asset('resources/font-awesome4.0.3.css') }}">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
     @yield('additionalStyle')
-    <style>
-        * {
-            padding: 0;
-            margin: 0;
-        }
-
-        svg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            box-sizing: border-box;
-            display: block;
-            background-color: #2835f0;
-            background-image: linear-gradient(to bottom, rgba(19, 44, 237, 0.86), rgb(206, 74, 82));
-        }
-    </style>
 </head>
 
-<body>
-    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+<body
+    {{-- <svg class="svg-background-template" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
         width="100%" height="100%" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice">
         <defs>
             <linearGradient id="bg">
@@ -60,7 +43,7 @@
                     keySplines="0.42, 0, 0.58, 1.0;0.42, 0, 0.58, 1.0" repeatCount="indefinite" />
             </use>
         </g>
-    </svg>
+    </svg> --}}
     <div class="container-fluid px-1 py-5">
         <div class="row justify-content-center">
             <div class="col-lg-9 col-md-10">
@@ -71,10 +54,9 @@
     <script src="{{ asset('resources/bootstrap4.3.1.min.js') }}"></script>
     <script src="{{ asset('resources/jquery3.2.1.min.js') }}"></script>
     <script src="{{ asset('resources/jquery3.6.0.min.js') }}"></script>
+    <script src="{{ asset('js/feedback-template.js') }}"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
     @yield('additionalScript')
 </body>
 
 </html>
-
-{{-- <script src="{{ url('js/script.js') }}"></script> --}}
