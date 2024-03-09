@@ -5,7 +5,8 @@
 @endsection
 
 @section('section')
-<div class="card rounded-0">
+<div class="card">
+    @include('layout.depedLogo')
     @include('layout.feedbackHeader')
     <div class="container mb-3 mt-0">
         <div class="container rounded border">
@@ -59,11 +60,11 @@
                     <div class="container text-center d-flex justify-content-center my-3">
                         @if (!session('cc3Edit'))
                                 <a href="{{ route('cc2Checked') }}"
-                                    class="text-center btn btn-success rounded-1 prev mr-2" id="back">
+                                    class="text-center btn btn-primary rounded-1 prev mr-2" id="back">
                                     Back
                                 </a>
                             @endif
-                            <input class="text-center btn btn-success rounded-1 prev mr-2" type="submit"
+                            <input class="text-center btn btn-primary rounded-1 prev mr-2" type="submit"
                                 value="{{ session('Confirm', 'Next') }}" id="next">
                     </div>
                 </form>

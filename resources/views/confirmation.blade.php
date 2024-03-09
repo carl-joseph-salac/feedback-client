@@ -19,6 +19,7 @@
 
 @section('section')
     <div class="card b-0 rounded-3">
+        @include('layout.depedLogo')
         <div class="row justify-content-center mx-auto step-container text-center">
             <div class="col-4 step-box">
                 <h6 class="step-title-0">
@@ -58,7 +59,7 @@
                             </table>
                         </div>
                         <div class="container text-center d-flex justify-content-center my-3">
-                            <input class="text-center btn btn-success  rounded-1 prev mr-2 buttons"
+                            <input class="text-center btn btn-primary  rounded-1 prev mr-2 buttons"
                             type="submit" value="Confirm" id="confirm">
                         </div>
                     </form>

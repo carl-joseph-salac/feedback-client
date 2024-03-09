@@ -35,7 +35,7 @@
       display: block;
       text-align: center;
       line-height: 20px;
-      color: #30ac38;
+      color: #ff0000;
       font-weight: bold;
     }
 
@@ -46,7 +46,7 @@
         height: 20px;
         text-align: center;
         line-height: 20px;
-        color: #30ac38;
+        color: #ff0000;
         font-weight: bold;
     }
 </style>

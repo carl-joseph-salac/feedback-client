@@ -48,14 +48,14 @@
     .rating>input:checked~label,
     .rating:not(:checked)>label:hover,
     .rating:not(:checked)>label:hover~label {
-        color: #00fc69;
+        color: #fc0000;
     }
 
     .rating>input:checked+label:hover,
     .rating>input:checked~label:hover,
     .rating>label:hover~input:checked~label,
     .rating>input:checked~label:hover~label {
-        color: #2ddc76;
+        color: #dc2d2d;
     }
 
     .btn {

@@ -9,7 +9,8 @@
 @endsection
 
 @section('section')
-    <div class="card b-0 show pb-3 rounded-4" id="card-carl">
+    <div class="card">
+        @include('layout.depedLogo')
         <div class="row justify-content-center mx-auto step-container text-center mb-4">
             <div class="col-4 step-box active">
                 <h6 class="step-title-0">
@@ -57,7 +58,7 @@
 
                     </div>
                 </div>
-                <button type="submit" disabled id="start" class="btn btn-primary rounded-1 mb-5">
+                <button type="submit" disabled id="start" class="btn btn-primary rounded-1 mb-4 px-4">
                     START
                 </button>
             </div>

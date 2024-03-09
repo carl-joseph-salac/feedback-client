@@ -1,7 +1,8 @@
 @extends('layout.app')
 
 @section('section')
-    <div class="card rounded-0">
+    <div class="card">
+        @include('layout.depedLogo')
         @include('layout.feedbackHeader')
         <div class="container mb-3 mt-0">
             <div class="container">
@@ -17,19 +18,13 @@
                                 name="suggestion">{{ session('suggestion') }}</textarea>
                         </div>
                         <div class="container text-center d-flex justify-content-center my-3">
-                            {{-- <a href="{{ route('sqd8Star') }}" class="text-center btn btn-success rounded-1 prev mr-2"
-                                style="width: 85px">
-                                Back
-                            </a>
-                            <input class="text-center btn btn-success rounded-1 prev mr-2" type="submit" value="Next"
-                                id="next" style="width: 85px"> --}}
                             @if (!session('cc1Edit'))
                                 <a href="{{ route('sqd8Star') }}"
-                                    class="text-center btn btn-success rounded-1 prev mr-2" id="back" style="width: 85px">
+                                    class="text-center btn btn-primary rounded-1 prev mr-2" id="back" style="width: 85px">
                                     Back
                                 </a>
                             @endif
-                            <input class="text-center btn btn-success rounded-1 prev mr-2" type="submit"
+                            <input class="text-center btn btn-primary rounded-1 prev mr-2" type="submit"
                                 value="{{ session('Confirm', 'Next') }}" id="next" style="width: 85px">
                         </div>
                     </form>

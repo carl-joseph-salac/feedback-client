@@ -1,7 +1,8 @@
 @extends('layout.app')
 
 @section('section')
-<div class="card b-0 rounded-0">
+<div class="card">
+    @include('layout.depedLogo')
     <div class="row justify-content-center mx-auto step-container text-center">
         <div class="col-4 step-box">
             <h6 class="step-title-0">
@@ -28,7 +29,7 @@
     <div class="p-3 justify-content-center text-center">
         <h3 class="heading">Thank You for your Feedback!</h3>
         <div class="row justify-content-center">
-            <div class="">
+            <div>
                 <img src="{{ asset('images/check-feedback.gif')}}" class="fit-image mb-2" style="width: 200px;">
                 <br>
                 <a href="http://20.20.23.72/client-log-master/public/clientLogs/applicationForm"

@@ -20,7 +20,7 @@
             <td><strong>{{ strtoupper($question->question_no) }}</strong> </td>
             <td>{{ $question->question }}</td>
             <td rowspan="2">
-                <a href="{{ route($question->question_no . 'Star') }}" class="btn btn-success btn-sm rounded-1 btn-edit"
+                <a href="{{ route($question->question_no . 'Star') }}" class="btn btn-primary btn-sm rounded-1 btn-edit"
                     type="button" data-toggle="tooltip" data-placement="top" title="Edit">
                     <i class="fa fa-edit mr-1"></i>
                     Edit
@@ -30,7 +30,7 @@
         <tr class="border-bottom">
             <td></td>
             <td>
-                <span class="fa fa-circle bg-success"></span>
+                <span class="fa fa-circle bg-danger"></span>
                 {{ session($question->question_no) }}
             </td>
         </tr>
