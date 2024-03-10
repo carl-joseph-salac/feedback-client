@@ -14,6 +14,19 @@
         .btn-secondary {
             width: 65px;
         }
+
+        @media (max-width: 576px) {
+            .new-row {
+            display: table-row;
+            width: 100%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .border-bottom-xs-none {
+            border-bottom: none !important;
+            }
+        }
     </style>
 @endsection
 
@@ -52,13 +65,13 @@
                         @csrf
                         @method('post')
                         <div class="container">
-                            <table>
+                            <table >
                                 @include('confirmationCC')
                                 @include('confirmationSqd')
                                 @include('confirmationSuggestion')
                             </table>
                         </div>
-                        <div class="container text-center d-flex justify-content-center my-3">
+                        <div class="container text-center d-flex justify-content-center my-3 mt-5">
                             <input class="text-center btn btn-primary  rounded-1 prev mr-2 buttons"
                             type="submit" value="Confirm" id="confirm">
                         </div>

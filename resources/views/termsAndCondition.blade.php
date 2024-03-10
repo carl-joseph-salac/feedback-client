@@ -39,14 +39,14 @@
             @method('post')
             <div class="p-3 justify-content-center text-center">
                 <h4 class="heading">Terms and Conditions</h4>
-                <div class="custom-control custom-checkbox mb-4">
+                <div class="custom-control custom-checkbox mb-4 ">
                     <input id="customCheck" name="customCheck" type="checkbox"
                         class="custom-control-input hover-cursor-pointer" {{ $customCheck ? 'checked' : '' }}>
                     <label id="customLabel" for="customCheck" class="custom-control-label" style="font-size: 16px">
                         I have read and agree to the following Terms and Conditions
                     </label>
                 </div>
-                <div class="row justify-content-center px-5 mb-4">
+                <div class="row text-md-left px-5 mb-4">
                     <p>
                         This Client Satisfaction Measurement (CSM) tracks the customer experience of government offices.
                         Your feedback on your recently concluded transaction will help this office provide a better
@@ -62,7 +62,7 @@
                     START
                 </button>
             </div>
-            <div class="ml-3">
+            <div class="ml-md-3 text-md-left text-center">
                 <a href="http://20.20.23.72/client-log-master/public/clientLogs/applicationForm"
                     class="btn btn-outline-danger btn-md rounded-1" type="button" data-toggle="tooltip" data-placement="top"
                     title="Edit">

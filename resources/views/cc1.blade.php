@@ -15,14 +15,14 @@
                     <form action="{{ route(session('cc1Edit', 'cc2')) }}" method="post" class="mt-2">
                         @csrf
                         @method('post')
-                        <table class="mx-auto">
+                        <table  class="mx-auto">
                             <tr>
                                 <td style="width: 50px;"><strong>{{ strtoupper($cc->question_no) }}</strong></td>
-                                <td colspan="3">{{ $cc->question }}</td>
+                                <td colspan="2">{{ $cc->question }}</td>
                             </tr>
                             <tr>
-                                <td></td>
-                                <td class="checkboxes">
+                                <td class="d-none d-md-table-cell"></td>
+                                <td class="checkboxes text-center">
                                     <input class="radios" type="radio" name="cc1" id="choices1"
                                         value="{{ $cc->choices1 }}" {{ session('cc1') == $cc->choices1 ? 'checked' : '' }}>
                                     <label for="choices1"></label>
@@ -30,24 +30,24 @@
                                 <td name="choices1" colspan="2">1. {{ $cc->choices1 }}</td>
                             </tr>
                             <tr>
-                                <td></td>
-                                <td class="checkboxes"><input class="radios" type="radio" name="cc1" id="choices2"
+                                <td class="d-none d-md-table-cell"></td>
+                                <td class="checkboxes text-center"><input class="radios" type="radio" name="cc1" id="choices2"
                                         value="{{ $cc->choices2 }}" {{ session('cc1') == $cc->choices2 ? 'checked' : '' }}>
                                     <label for="choices2"></label>
                                 </td>
                                 <td name="choices2" colspan="2">2. {{ $cc->choices2 }} </td>
                             </tr>
                             <tr>
-                                <td></td>
-                                <td class="checkboxes"><input class="radios" type="radio" name="cc1" id="choices3"
+                                <td class="d-none d-md-table-cell"></td>
+                                <td class="checkboxes text-center"><input class="radios" type="radio" name="cc1" id="choices3"
                                         value="{{ $cc->choices3 }}" {{ session('cc1') == $cc->choices3 ? 'checked' : '' }}>
                                     <label for="choices3"></label>
                                 </td>
                                 <td name="choices3" colspan="2">3. {{ $cc->choices3 }} </td>
                             </tr>
                             <tr>
-                                <td></td>
-                                <td class="checkboxes"><input class="radios" type="radio" name="cc1" id="choices4"
+                                <td class="d-none d-md-table-cell"></td>
+                                <td class="checkboxes text-center"><input class="radios" type="radio" name="cc1" id="choices4"
                                         value="{{ $cc->choices4 }}"
                                         {{ session('cc1') == $cc->choices4 ? 'checked' : '' }}>
                                     <label for="choices4"></label>

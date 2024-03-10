@@ -47,15 +47,6 @@
                             </td>
                             <td name="choices3" colspan="2">3. {{$cc->choices3}} </td>
                         </tr>
-                        <tr>
-                            <td></td>
-                            <td class="checkboxes">
-                                <input class="radios" type="radio" name="cc3" id="choices4"
-                                value="{{$cc->choices4}}" {{ session('cc3') == $cc->choices4 ? 'checked' : '' }}>
-                                <label for="choices4"></label>
-                            </td>
-                            <td name="choices3" colspan="2">4. {{$cc->choices4}} </td>
-                        </tr>
                     </table>
                     <div class="container text-center d-flex justify-content-center my-3">
                         @if (!session('cc3Edit'))
