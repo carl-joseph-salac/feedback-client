@@ -46,7 +46,7 @@
                         I have read and agree to the following Terms and Conditions
                     </label>
                 </div>
-                <div class="row text-md-left px-5 mb-4">
+                <div class="row text-left px-5 mb-4">
                     <p>
                         This Client Satisfaction Measurement (CSM) tracks the customer experience of government offices.
                         Your feedback on your recently concluded transaction will help this office provide a better

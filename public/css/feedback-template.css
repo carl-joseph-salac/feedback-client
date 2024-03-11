@@ -2,21 +2,18 @@ body {
     overflow-x: hidden;
     min-height: 100%;
     height: auto;
-    background-image: url(../images/feedback-background-image.png);
+    background-image: url(../images/lightred-bg-2.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: 50% 50%;
     background-size: cover;
 }
 
-/* .card.show {
-    display: block !important;
-} */
-
 .card {
     border: 1px solid rgba(255, 255, 255, 0.076);
     border-radius: 20px;
     background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 /* .card {
