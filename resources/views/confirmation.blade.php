@@ -59,13 +59,13 @@
 
         <div class="container mb-3 mt-0">
             <h6 class="confirm text-center">Review the provided feedback and click ‘Confirm’</h6>
-            <div class="container rounded border">
+            <div class="container rounded border border-dark">
                 <div>
                     <form action="{{ route('submitFeedback') }}" method="post">
                         @csrf
                         @method('post')
                         <div class="container">
-                            <table >
+                            <table>
                                 @include('confirmationCC')
                                 @include('confirmationSqd')
                                 @include('confirmationSuggestion')

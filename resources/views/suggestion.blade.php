@@ -5,7 +5,7 @@
         @include('layout.depedLogo')
         @include('layout.feedbackHeader')
         <div class="container mb-3 mt-0">
-            <div class="container">
+            <div class="container border-dark">
                 <div class="px-4">
                     <form action="{{ route('confirmation') }}" method="post">
                         @csrf

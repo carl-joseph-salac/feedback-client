@@ -40,7 +40,7 @@
     }
 
     .rating>label {
-        color: #ddd;
+        color: #909090;
         float: right;
         cursor: pointer;
     }

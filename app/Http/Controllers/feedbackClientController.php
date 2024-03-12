@@ -342,6 +342,7 @@ class feedbackClientController extends Controller
         try{
             DB::table('tbl_feedback')
             ->insert([
+                // 'clientNumber' => 2024,
                 'clientNumber' => session('clientNumber'),
                 'feedbackNumber' => $feedBackNumber,
                 'cc1' => session('cc1'),

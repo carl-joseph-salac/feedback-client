@@ -9,7 +9,7 @@
         @include('layout.depedLogo')
         @include('layout.feedbackHeader')
         <div class="container mb-3 mt-0">
-            <div class="container rounded border">
+            <div class="container rounded border border-dark">
                 <div class="container px-4 justify-content-center">
                     @include('layout.ccInstruction')
                     <form action="{{ route(session('cc1Edit', 'cc2')) }}" method="post" class="mt-2">

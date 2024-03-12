@@ -9,7 +9,7 @@
     @include('layout.depedLogo')
     @include('layout.feedbackHeader')
     <div class="container mb-3 mt-0">
-        <div class="container rounded border">
+        <div class="container rounded border border-dark">
             <div class="px-4">
                 @include('layout.ccInstruction')
                 <form action="{{ route(session('cc3Edit', 'sqd0')) }}" method="post" class="mt-2">
