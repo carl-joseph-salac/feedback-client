@@ -1,13 +1,16 @@
-{{-- <div class="text-center d-flex justify-content-between"
-    style="border-top-left-radius: 20px; border-top-right-radius: 20px;">
-    <img class="my-2 mx-sm-5 mx-3" src="{{ asset('images/deped-calabarzon-logo.jpg') }}"
-        style="height: 120px; border-radius: 60px;">
-    <img class="my-2 mx-sm-5 mx-3" src="{{ asset('images/deped4a-profile.jpg') }}"
-        style="width: 120px; border-radius: 60px;">
-</div> --}}
-
-<div class="text-center p-3">
-    <h4>
-        Client Satisfaction Measurement (CSM)
-    </h4>
+<div class="container text-center p-3">
+    <div class="row d-lg-none">
+        <div class="col-12 col-lg-6">
+            <h4 class="d-none d-md-block">DEPED IV-A CALABARZON</h4>
+            <h5 class="d-md-none">DEPED IV-A CALABARZON</h5>
+        </div>
+        <div class="col-12 col-lg-6">
+            <h4 class="d-none d-md-block">Client Satisfaction Measurement (CSM)</h4>
+            <h6 class="d-md-none">Client Satisfaction Measurement (CSM)</h6>
+        </div>
+    </div>
+    <div class="row d-none d-lg-block">
+        <h4>DEPED IV-A CALABARZON - Client Satisfaction Measurement (CSM)</h4>
+    </div>
 </div>
+

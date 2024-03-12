@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Feedback Client</title>
-    {{-- <link rel="stylesheet" href="{{ asset('css/test.css') }}"> --}}
     <link rel="stylesheet" href="{{ asset('resources/bootstrap4.3.1.min.css') }}">
     <link rel="stylesheet" href="{{ asset('resources/font-awesome4.0.3.css') }}">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">

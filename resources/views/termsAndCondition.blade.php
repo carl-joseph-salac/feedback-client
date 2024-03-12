@@ -42,7 +42,7 @@
                 <div class="custom-control custom-checkbox mb-4 ">
                     <input id="customCheck" name="customCheck" type="checkbox"
                         class="custom-control-input hover-cursor-pointer" {{ $customCheck ? 'checked' : '' }}>
-                    <label id="customLabel" for="customCheck" class="custom-control-label" style="font-size: 16px">
+                    <label id="customLabel" for="customCheck" class="custom-control-label" style="font-size: 15px">
                         I have read and agree to the following Terms and Conditions
                     </label>
                 </div>
