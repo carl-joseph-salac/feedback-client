@@ -9,10 +9,6 @@ body {
     background-size: cover;
 }
 
-.card-img {
-    border-radius: 20px;
-}
-
 .card {
     border: 1px solid rgba(255, 255, 255, 0.076);
     border-radius: 20px;
@@ -25,6 +21,7 @@ body {
     background-attachment: fixed;
     background-position: 50% 50%;
     background-size: cover;
+    padding-bottom: 25px;
 }
 
 
@@ -46,7 +43,7 @@ body {
     padding: 10px;
     border-left: 1px solid rgba(211, 211, 211, 0.522);
     border-right: 1px solid rgba(211, 211, 211, 0.522);
-    background-color: #fff;
+    background-color: #ffffff92;
     box-shadow: rgba(0, 0, 0, 0.364) 0px 5px 15px;
 }
 
@@ -104,4 +101,8 @@ body {
 
 p, span, td, label, input, h6, textarea {
     font-size: 18px;
+}
+
+header-font {
+    font-family: 'Times New Roman', Times, serif;
 }

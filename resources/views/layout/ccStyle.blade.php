@@ -23,8 +23,8 @@
       display: inline-block;
       width: 20px;
       height: 20px;
-      background-color: #fff;
-      border: 1px solid #888787;
+      /* background-color: #ffffff00; */
+      border: 1px solid #525252;
       border-radius: 4px;
       cursor: pointer;
       margin: 0;
