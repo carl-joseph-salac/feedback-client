@@ -91,11 +91,8 @@
         function handleButtonState() {
             const startBtn = document.getElementById("start");
             const checkbox = document.getElementById("customCheck");
+            const checkboxChecked = "{{ session('customCheck') }}" == '1';
 
-            // Check if the checkbox was previously checked (based on session data)
-            const checkboxChecked = "{{ session('customCheck') }}" == '1'; // Convert session data to boolean
-
-            // Enable or disable the button based on checkbox state
             if (checkboxChecked) {
                 startBtn.removeAttribute("disabled");
             } else {
